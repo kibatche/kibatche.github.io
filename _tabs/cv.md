@@ -38,8 +38,17 @@ $> ls -a
 
 _Depuis Mai 2021_
 
-![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white)![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)
-![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)![Debian](https://img.shields.io/badge/Debian-D70A53?style=for-the-badge&logo=debian&logoColor=white)![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white)![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)![Redis](https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white)![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54){: .normal}
+![C](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-plain.svg)
+
+
+
+![C++]
+![Docker]
+![Debian]
+![MariaDB]
+![PHP]
+![Redis]
+![Python]
 
 > Le [tronc commun](https://raw.githubusercontent.com/0xbatche/0xbatche.github.io/master/common-core-42.png) couvre les langages C et C++ sur différents aspects.
 Quelques projets pertinents:

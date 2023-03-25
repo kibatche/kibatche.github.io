@@ -93,7 +93,7 @@ _-> Région Parisienne, France (ex: [3IS](https://www.3is.fr/))_
 
 _2013 à 2020_
 
-![Adobe Premiere Pro](https://img.shields.io/badge/Adobe%20Premiere%20Pro-9999FF.svg?style=for-the-badge&logo=Adobe%20Premiere%20Pro&logoColor=white) ![Adobe Photoshop](https://img.shields.io/badge/adobe%20photoshop-%2331A8FF.svg?style=for-the-badge&logo=adobe%20photoshop&logoColor=white) ![Adobe After Effects](https://img.shields.io/badge/Adobe%20After%20Effects-9999FF.svg?style=for-the-badge&logo=Adobe%20After%20Effects&logoColor=white) ![macOS](https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=macos&logoColor=F0F0F0)
+![Adobe Premiere Pro]![Adobe Photoshop] ![Adobe After Effects]![macOS]
 
 > Réalisation, (co-)direction artistique d'un nombre conséquent de projets (haute école, film, publicité, clip, théâtre...)
 
@@ -116,7 +116,7 @@ _-> Saint-Quentin en Yvelines, France (3IS)_
 
 _2014 à 2019_
 
-![Pédagogie](https://img.shields.io/badge/Pedagogie-%23FCC771?style=for-the-badge&logoColor=white) ![Connaissances](https://img.shields.io/badge/Connaissances-FCC624.svg?style=for-the-badge&logoColor=white) ![Rigueur](https://img.shields.io/badge/Rigueur-%23F7931E.svg?style=for-the-badge&logoColor=white)
+![Pédagogie]![Connaissances]![Rigueur]
 
 - Participer avec le corps enseignant à la conception, l'écriture et mise en place du programme pédagogique.
 - Animer les cours auprès des étudiants (du BAC au Master)
@@ -125,24 +125,23 @@ _2014 à 2019_
 ---
 
 ## $> {Soft}-Skills
-![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white) ![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Shell Script](https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white) ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black) ![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white) ![macOS](https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=macos&logoColor=F0F0F0)
- ![Vim](https://img.shields.io/badge/VIM-%2311AB00.svg?style=for-the-badge&logo=vim&logoColor=white) ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
- ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+![C]![Python]![Shell Script]![Linux]![Windows]![macOS]
+ ![Vim]![Visual Studio Code]
+ ![GitHub]
 
- ![Docu](https://img.shields.io/badge/Documentation%20&%20Reporting-7D4698?style=for-the-badge) ![Tests](https://img.shields.io/badge/Tests-7D00FF?style=for-the-badge) ![Tech Watch](https://img.shields.io/badge/Veille%20informatique-39477F?style=for-the-badge)
+ ![Docu]![Tests]![Tech Watch]
 
-![Curious](https://img.shields.io/badge/(très)%20Curieux-%234ea94b.svg?style=for-the-badge) ![enthusiast](https://img.shields.io/badge/Enthousiaste-EA4C89?style=for-the-badge) ![Flexible](https://img.shields.io/badge/Flexible-203759?style=for-the-badge)
+![Curious]![enthusiast]![Flexible]
 
 ---
 
 ## $> Intérêts && Activités
-![offsec](https://img.shields.io/badge/cybersécurité%20💻-%23FF2D20.svg?style=for-the-badge) [![HTB](https://img.shields.io/badge/Hack%20The%20Box-black?style=flat-square)](https://app.hackthebox.com/profile/789938) ![RM](https://img.shields.io/badge/Root--me-black?style=flat-square) ![CTF](https://img.shields.io/badge/CTF-black?style=flat-square)
+![offsec][![HTB]![RM]![CTF]
 
-![Politic](https://img.shields.io/badge/Politique%20&&%20et%20actualités%20📰-%23123.svg?style=for-the-badge) ![GeoPol](https://img.shields.io/badge/Géopolitique-657D8B?style=flat-square) ![Science](https://img.shields.io/badge/Sciences-657D8B?style=flat-square) ![Ecology](https://img.shields.io/badge/Ecologie-657D8B?style=flat-square)
+![Politic]![GeoPol]![Science] ![Ecology]
 
- ![Book](https://img.shields.io/badge/Livres%20📚-2B283A?style=for-the-badge) ![SF](https://img.shields.io/badge/Science--Fiction-grey?style=flat-square) ![Essays](https://img.shields.io/badge/Essais-grey?style=flat-square)
-
-![Nature](https://img.shields.io/badge/Nature%20et%20Sport🌿-brown.svg?style=for-the-badge)
+ ![Book]![SF]![Essays]
+![Nature]
 
 ---
 

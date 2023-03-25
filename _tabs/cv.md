@@ -7,16 +7,16 @@ icon: "fa-solid fa-file-user"
 ![MADEWOTHMD](https://img.shields.io/badge/Made%20with-Markdown-blue?style=flat-square&logoColor=white) [![PDFLINK](https://img.shields.io/badge/Télécharger%20le%20PDF-grey?style=flat-square&logoColor=white)](https://github.com/0xbatche/0xbatche.github.io/raw/master/BADAD_cherif_resume_fr.pdf) -->
 
 ---
+> mail : batche at protonmail.com
+{: .prompt-info }
+> tel : 06 58_75_01 28
+{: .prompt-info }
 
 # Chérif BADAD
 
-> [![Mail](https://img.shields.io/badge/Ecrivez-moi-%23107C10.svg?style=flat-square&logoColor=white)](mailto:chbadad@student.42.fr)
 
-> ![Tel](https://img.shields.io/badge/+33658750128-%23107C10.svg?style=flat-square&logoColor=white)
 
-> ![Year](https://img.shields.io/badge/32%20ans-grey?style=flat-square&logoColor=white)
-
-### Etudiant en sciences de l'informatique à l'école 42 Paris, aspirant en administration système avec une appétence pour la sécurité informatique.
+### Etudiant en sciences de l'informatique à l'école 42 Paris, aspirant en administration système et réseaux avec une appétence pour la sécurité informatique.
 ### _Disponible pour un stage ou en apprentissage sur Brest et alentours._
 
 ---
@@ -38,8 +38,8 @@ $> ls -a
 
 _Depuis Mai 2021_
 
-![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white) ![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white) ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)  	![Debian](https://img.shields.io/badge/Debian-D70A53?style=for-the-badge&logo=debian&logoColor=white)
-![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white) ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white) ![Redis](https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white)![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)![Debian](https://img.shields.io/badge/Debian-D70A53?style=for-the-badge&logo=debian&logoColor=white)![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white)![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)![Redis](https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white)![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54){: .normal}
 
 > Le [tronc commun](https://raw.githubusercontent.com/0xbatche/0xbatche.github.io/master/common-core-42.png) couvre les langages C et C++ sur différents aspects.
 Quelques projets pertinents:

@@ -1,5 +1,5 @@
 ---
-title: pyjam.automatic, déploiement automatisée d'un tunnel pyjam.as
+title: pyjam.automatic, déploiement automatisé d'un tunnel pyjam.as
 categories:
 - Programme
 - web
@@ -13,9 +13,9 @@ tags:
 
 Petite présentation d'un programme très simple qui permet de déployer un tunnel [pyjam.as](https://tunnel.pyjam.as/) automatiquement.
 
-Ngrok étant devenu de plus en plus restrictif sur son utilisation gratuite, pyjam.as est une alternative très intéressante pour créer un tunnel entre une application local et internet.
+Ngrok étant devenu de plus en plus restrictif sur son utilisation gratuite (avec notamment une _warning page_ qui bloque tout bot voulant venir sur notre app locale), pyjam.as est une alternative très intéressante pour créer un tunnel entre une application locale et internet.
 
-En effet, dans de nombreuses situations (pour ma part principalement des challenges root-me et des machines sur jack the box), nous avons besoin de faire en sorte qu'un payload quelconque soit accessible via internet. C'est par exemple le cas lorsqu'on souhaite opérer une redirection vers notre app malveillante après une xss.
+En effet, dans de nombreuses situations (pour ma part principalement des challenges root-me et des machines sur hack the box), nous avons besoin de faire en sorte qu'un payload quelconque soit accessible via internet. C'est par exemple le cas lorsqu'on souhaite opérer une redirection vers notre app malveillante après une xss.
 
 Ce programme très simple est écrit en python3.
 

@@ -9,15 +9,10 @@ pin: true
 ![MADEWOTHMD](https://img.shields.io/badge/Made%20with-Markdown-blue?style=flat-square&logoColor=white) [![PDFLINK](https://img.shields.io/badge/Télécharger%20le%20PDF-grey?style=flat-square&logoColor=white)](https://github.com/0xbatche/0xbatche.github.io/raw/master/BADAD_cherif_resume_fr.pdf) -->
 
 ---
-![mail](/resume/mail.svg){: w="20" h="20" .w-100}
-> batche at protonmail.com
-
-![phone](/resume/phone.svg){: w="20" h="20" .w-100}
-> 06 58_75_01 28
+> ![mail](/resume/mail.svg){: w="15" h="15" .left} batche at protonmail.com ![phone](/resume/phone.svg){: w="15" h="15" .normal} 06 58_75_01 28
+{: .prompt-info}
 
 # Chérif BADAD
-
-
 
 ### Etudiant en sciences de l'informatique à l'école 42 Paris, aspirant en administration système et réseaux avec une appétence pour la sécurité informatique.
 ### _Disponible pour un stage ou en apprentissage sur Brest et alentours._
@@ -47,38 +42,36 @@ _Depuis Mai 2021_
 
 ![c language](c/c-plain.svg){: width="40" height="40" .normal}![Cpp language](cplusplus/cplusplus-plain.svg){: width="40" height="40" .normal}![Docker](docker/docker-plain.svg){: width="40" height="40" .normal}![Debian](debian/debian-plain.svg){: width="40" height="40" .normal}![Mysql](mysql/mysql-plain.svg){: width="40" height="40" .normal}![PHP](php/php-plain.svg){: width="40" height="40" .normal}![Redis](redis/redis-plain.svg){: width="40" height="40" .normal}![Python language](python/python-plain.svg){: width="40" height="40" .normal}![bash](bash/bash-plain.svg){: width="40" height="40" .normal}![nestjs](nestjs/nestjs-plain.svg){: width="40" height="40" .normal}![svelte](svelte/svelte-plain.svg){: width="40" height="40" .normal}
 
+
+> Equivalent Master commencé au mois de Mars 2023 en Administration des systèmes d'information, réseaux et sécurité.
+{: .prompt-info}
+
+- [x] taskmaster :
+    - Un programme comme [Supervisor](http://supervisord.org/) qui gère d'autres programme via un design client/serveur et des sockets Unix. Ecrit à 4 mains en python.
+
 > Le [tronc commun](https://raw.githubusercontent.com/0xbatche/0xbatche.github.io/master/common-core-42.png) couvre les langages C et C++ sur différents aspects. Quelques projets pertinents:
+{: .prompt-info}
 
+- [x] ft_transcendence
+    - Une application web pour un jeu de pong multijoueur en ligne. Back nestjs et front en svelte.
 
-- taskmaster :
--- Un programme comme [Supervisor](http://supervisord.org/) qui gère d'autres programme via un design client/serveur et des sockets Unix. Ecrit un python.
+- [x] ft_container
+    - Les conteneurs stack, vector et map de la STL recodés en c++ .
 
-- ft_transcendence :
--- Une application web pour un jeu de pong multijoueur en ligne. Back nestjs et front en svelte.
+- [x] Webserv
+    - Un serveur web de type nginx (pour le protocole HTTP 1.1) en c/c++.
 
-- ft_container:
--- Les conteneurs stack, vector et map de la STL recodés en c++ .
+- [x] Inception :
+    - _Dockerisation_ (dockerfiles et docker-compose) d'une LEMP stack + {redis, php-my-admin, ftp, prometheus/grafana}
 
-- Webserv :
--- Un serveur web de type nginx (pour le protocole HTTP 1.1) en c/c++.
+- [x] Born To be Root, NetPractice :
+    - Admisitration système et réseau d'un serveur debian pour une application wordpress; protocole TCP/IP.
 
-- Inception :
--- _Dockérisation_ à partir de 0 (dockerfiles et docker-compose) d'une LEMP stack + {redis, php-my-admin, ftp, prometheus/grafana}
+- [x] minishell
+    - Un shell _bash like_ en C.
 
-- Born To be Root, NetPractice :
--- Admisitration système et réseau d'un serveur debian pour une application wordpress; présentation générale du protocole TCP/IP (troisième couche).
-
-- Modules CPP - ft_containers :
--- Une vue générale du langage c++ (tout ce qui concerne l'orienté objet jusqu'aux containeurs) pour le premier.
-
-- Cub3D :
--- Recoder un [fameux](https://fr.wikipedia.org/wiki/Wolfenstein_3D) jeu vidéo en C et avec une librarie graphique.
-
-- minishell
--- Un shell _bash like_ en C.
-
-- Libft, ft_printf, philosophers, push_swap.. :
--- La libc, printf et la programmation _multi threading_ en C.
+- [x] Libft, ft_printf, philosophers, push_swap.. :
+    - La libc, printf, programmation _multi threading_, algorithmies... en C.
 
 ---
 

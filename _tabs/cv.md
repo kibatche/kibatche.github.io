@@ -5,8 +5,7 @@ icon: fas fa-file
 img_path: /assets/img/icons
 pin: true
 ---
-<!--
-![MADEWOTHMD](https://img.shields.io/badge/Made%20with-Markdown-blue?style=flat-square&logoColor=white) [![PDFLINK](https://img.shields.io/badge/Télécharger%20le%20PDF-grey?style=flat-square&logoColor=white)](https://github.com/0xbatche/0xbatche.github.io/raw/master/BADAD_cherif_resume_fr.pdf) -->
+[![mail](/resume/download.svg){: w="100" h="100" .left}](/assets/downloads/cv_fr.pdf)
 
 ---
 > ![mail](/resume/mail.svg){: w="15" h="15" .left} batche at protonmail.com ![phone](/resume/phone.svg){: w="15" h="15" .normal} 06 58_75_01 28
@@ -47,7 +46,7 @@ _Depuis Mai 2021_
 {: .prompt-info}
 
 - [x] taskmaster :
-    - Un programme comme [Supervisor](http://supervisord.org/) qui gère d'autres programme via un design client/serveur et des sockets Unix. Ecrit à 4 mains en python.
+    - Un programme comme [Supervisor](http://supervisord.org/) via un design client/serveur et des sockets Unix. Ecrit à 4 mains en python.
 
 > Le [tronc commun](https://raw.githubusercontent.com/0xbatche/0xbatche.github.io/master/common-core-42.png) couvre les langages C et C++ sur différents aspects. Quelques projets pertinents:
 {: .prompt-info}

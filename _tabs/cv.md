@@ -14,13 +14,13 @@ pin: true
 
 # Chérif BADAD
 
-### Etudiant en sciences de l'informatique à l'école 42 Paris, aspirant en administration système et réseaux avec une appétence pour la sécurité informatique.
+### Etudiant en sciences de l'informatique à l'école 42 Paris, prépare un équivalent master (RNCP) Administration des systèmes d'information, réseaux et sécurité.
 ### _Disponible pour un stage ou en apprentissage sur Brest et alentours._
 
 ---
 
 > Après plusieurs années à enseigner le montage vidéo et le graphisme, je me suis réorienté dans les domaines qui me passionnent :
-> celui de l'informatique et plus spécifiquement ses composantes administration système et réseau ainsi que le cybersécurité.
+> celui de l'informatique et plus spécifiquement ses composantes administration système et réseau ainsi que la cybersécurité.
 
 ---
 ```bash

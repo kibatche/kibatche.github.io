@@ -133,6 +133,13 @@ _2014 à 2019_
 
 ---
 
+### $> Ctf
+
+- Hack the Box University CTF 2022: 4ème / 941 équipes  | Un CTF qui ne regroupe que des universités du monde entier 
+- Hack the Box Cyberapocalyspe CTF 2023: 71ème / 6482 équipes | Un CTF qui regroupe principalement des professionnels du monde entier
+
+---
+
 ### $> Parcours scolaire
 - Ecole 42 Paris _Depuis Mai 2021_
 - Hack The Box Academy + quelques autres sites (cours sur la cybersécurité sur linux, windows AD, app web etc.)

@@ -135,8 +135,8 @@ _2014 à 2019_
 
 ### $> Ctf
 
-- Hack the Box University CTF 2022: 4ème / 941 équipes  | Un CTF qui ne regroupe que des universités du monde entier 
-- Hack the Box Cyberapocalyspe CTF 2023: 71ème / 6482 équipes | Un CTF qui regroupe principalement des professionnels du monde entier
+- Hack the Box University CTF 2022: 4ème / 941 équipes  => Un CTF qui ne regroupe que des universités du monde entier 
+- Hack the Box Cyberapocalyspe CTF 2023: 71ème / 6482 équipes => Un CTF qui regroupe principalement des professionnel.le.s du monde entier
 
 ---
 

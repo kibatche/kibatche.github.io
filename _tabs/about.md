@@ -13,4 +13,6 @@ Je suis étudiant en informatique à l'école 42. Mon parcours est singulier, qu
 
 L'attrait pour la sécurité informatique est arrivé au cours de mon cursus, et depuis lors c'est quelque chose qui me dévore. Je suis curieux de tout, mais on ne peut pas être expert sur tout. Ce à quoi je passe le plus de temps est clairement tout ce qui concerne le réseau, l'administration système sur Linux (je ne connais pas encore trop windows, mais c'est prévu), l'analyse forensique et les vulnérabilités web. Je suis encore en apprentissage, mais je suis très déterminé à devenir quelqu'un de compétent, en tout cas, j'y travaille tous les jours !
 
+Je suis également un membre actif de l'association de cybersécurité de mon école : APT42.
+
 Hormis l'informatique, j'aime surtout : les plantes, lire, cuisiner.

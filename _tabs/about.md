@@ -11,6 +11,6 @@ order: 4
 
 Je suis étudiant en informatique à l'école 42. Mon parcours est singulier, quoique à mon sens pas si peu courant que cela : j'ai été pendant quelques années monteur vidéo et enseignant dans ce domaine en Île-de-France. Comme de nombreuses personnes, j'ai eu envie de changer de profession, et me réorienter dans un domaine qui me passionne depuis longtemps. 
 
-L'attrait pour la sécurité informatique est arrivé au cours de mon cursus, et depuis lors c'est quelque chose qui me dévore. Je suis curieux de tout, mais on ne peut pas être expert surtout. Ce à quoi je passe le plus de temps est clairement tout ce qui concerne le réseau, l'administration système sur Linux (je ne connais pas encore trop windows, mais c'est prévu), l'analyse forensique et les vulnérabilités web. Je suis encore en apprentissage, mais je suis très déterminé à devenir quelqu'un de compétent, en tout cas, j'y travaille tous les jours !
+L'attrait pour la sécurité informatique est arrivé au cours de mon cursus, et depuis lors c'est quelque chose qui me dévore. Je suis curieux de tout, mais on ne peut pas être expert sur tout. Ce à quoi je passe le plus de temps est clairement tout ce qui concerne le réseau, l'administration système sur Linux (je ne connais pas encore trop windows, mais c'est prévu), l'analyse forensique et les vulnérabilités web. Je suis encore en apprentissage, mais je suis très déterminé à devenir quelqu'un de compétent, en tout cas, j'y travaille tous les jours !
 
 Hormis l'informatique, j'aime surtout : les plantes, lire, cuisiner.

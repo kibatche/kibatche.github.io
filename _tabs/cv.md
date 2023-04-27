@@ -5,7 +5,7 @@ icon: fas fa-file
 img_path: /assets/img/icons
 pin: true
 ---
-[![mail](/resume/download.svg){: w="100" h="100" .left}](/assets/downloads/cv_fr.pdf)
+[![download](/resume/download.svg){: w="100" h="100" .left}](/assets/downloads/cv_fr.pdf)
 
 ---
 > ![mail](/resume/mail.svg){: w="15" h="15" .left} batche@protonmail.com ![phone](/resume/phone.svg){: w="15" h="15" .normal} 06 58_75_01 28
@@ -124,6 +124,9 @@ _2014 à 2019_
 
 ## $> Intérêts && Activités
 ![cybersecurite](interets/cybersec.svg){: width="200" height="200" .normal} ![hack the box](hackthebox/htb.svg){: width="30" height="30" .normal}![root-me](rootme/rootme.svg){: width="35" height="35" .normal}![CTF](interets/ctf.svg){: width="40" height="40" .normal}
+[Profil Hack the box](https://app.hackthebox.com/profile/789938)
+[Profil Root-me](https://www.root-me.org/kibatche)
+
 
 ![Politic](interets/politique.svg){: width="100" height="100" .normal} ![Géo Politique](interets/geopolitique.svg){: width="100" height="100" .normal} ![Sciences](interets/sciences.svg){: width="100" height="100" .normal} ![Ecologie](interets/ecologie.svg){: width="100" height="100" .normal}
 

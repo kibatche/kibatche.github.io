@@ -1,5 +1,13 @@
 ---
 title: Inject (easy) - HackThe Box Write-up
+categories:
+- Write-up
+tags:
+- htb
+- web
+- vulnérabilités
+- cve-2022-22963
+- linux
 ---
 
 ## User

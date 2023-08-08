@@ -246,7 +246,7 @@ Dans le dossier app, on a un fichier de lisible : la config :
 
 On peut tenter de se connecter avec mysql.!
 
-[Capture d’écran du 2023-06-29 16-18-34.png](3.png)
+![Capture d’écran du 2023-06-29 16-18-34.png](3.png)
 
 On retrouve le user corum. On voit qu'il  a un mot de passe enregistré pour agile.
 

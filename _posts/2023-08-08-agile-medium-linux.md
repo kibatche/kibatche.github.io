@@ -3,11 +3,12 @@ title: Agile - Medium (Linux)
 img_path: "/assets/img/posts/Agile-Medium"
 categories:
 - Write-up
-- Vulnérabilités Web
+- HackTheBox
 tags:
 - hack-the-box
 - web
 - linux
+- vulnérabilités
 ---
 
 ### Nmap

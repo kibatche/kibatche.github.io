@@ -2,6 +2,7 @@
 title: Inject (easy) - HackThe Box Write-up
 categories:
 - Write-up
+- HackTheBox
 tags:
 - htb
 - web

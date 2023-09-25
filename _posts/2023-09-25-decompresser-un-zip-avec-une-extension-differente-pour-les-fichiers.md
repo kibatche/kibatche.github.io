@@ -1,6 +1,9 @@
 ---
 title: Décompresser un zip avec une extension différente pour les fichiers.
 img_path: "/assets/img/posts/file_zip_upload_with_different_name"
+categories:
+- Vulnérabilités Web
+- web
 ---
 
 ## Introduction
@@ -9,7 +12,7 @@ img_path: "/assets/img/posts/file_zip_upload_with_different_name"
 
 ### Comment ça se passe
 
-Pour faire synthétique, voici la procédure : 
+Pour faire synthétique, voici la procédure :
 
 - 1) Créer un fichier zip via python (script de hacktricks) :
 

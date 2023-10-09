@@ -15,12 +15,12 @@ tags:
 ```bash
 PORT   STATE SERVICE VERSION
 22/tcp open  ssh     OpenSSH 8.9p1 Ubuntu 3ubuntu0.1 (Ubuntu Linux; protocol 2.0)
-| ssh-hostkey: 
+| ssh-hostkey:
 |   256 4fe3a667a227f9118dc30ed773a02c28 (ECDSA)
 |_  256 816e78766b8aea7d1babd436b7f8ecc4 (ED25519)
 80/tcp open  http    Apache httpd 2.4.52
 |_http-title: Searcher
-| http-server-header: 
+| http-server-header:
 |   Apache/2.4.52 (Ubuntu)
 |_  Werkzeug/2.1.2 Python/3.10.6
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
@@ -78,7 +78,7 @@ La première chose que nous essayons c'est `sudo -l` :
 
 ```bash
 svc@busqueda:~$ sudo -l
-[sudo] password for svc: 
+[sudo] password for svc:
 Matching Defaults entries for svc on busqueda:
     env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin, use_pty
 
@@ -122,7 +122,7 @@ On peut s'y connecter en testant plusieurs user de croisés :
 
 svc:jh1usoih2bkjaspwe92
 administrator:jh1usoih2bkjaspwe92 (c'est lui qui a push l'appli searcher)
-cody:jh1usoih2bkjaspwe92 (on chope le nom en lisant .gitconfig dans le /home de svc)
+cody:jh1usoih2bkjaspwe92 (on chope le nom en lisant `.gitconfig` dans le /home de svc)
 
 Le dernier fonctionne, sauf qu'il n'est pas très intéressant.
 
@@ -130,10 +130,10 @@ Le dernier fonctionne, sauf qu'il n'est pas très intéressant.
 La commande docker-inspect va nous aider à rendre le tout beaucoup plus intéressant :
 
 ```bash
-svc@busqueda:~$ sudo /usr/bin/python3 /opt/scripts/system-checkup.py docker-inspect {{.Config}} gitea
+svc@busqueda:~$ sudo /usr/bin/python3 /opt/scripts/system-checkup.py docker-inspect \{\{.Config\}\} gitea
 {960873171e2e   false false false map[22/tcp:{} 3000/tcp:{}] false false false [USER_UID=115 USER_GID=121 GITEA__database__DB_TYPE=mysql GITEA__database__HOST=db:3306 GITEA__database__NAME=gitea GITEA__database__USER=gitea GITEA__database__PASSWD=yuiu1hoiu4i5ho1uh PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin USER=git GITEA_CUSTOM=/data/gitea] [/bin/s6-svscan /etc/s6] <nil> false gitea/gitea:latest map[/data:{} /etc/localtime:{} /etc/timezone:{}]  [/usr/bin/entrypoint] false  [] map[com.docker.compose.config-hash:e9e6ff8e594f3a8c77b688e35f3fe9163fe99c66597b19bdd03f9256d630f515 com.docker.compose.container-number:1 com.docker.compose.oneoff:False com.docker.compose.project:docker com.docker.compose.project.config_files:docker-compose.yml com.docker.compose.project.working_dir:/root/scripts/docker com.docker.compose.service:server com.docker.compose.version:1.29.2 maintainer:maintainers@gitea.io org.opencontainers.image.created:2022-11-24T13:22:00Z org.opencontainers.image.revision:9bccc60cf51f3b4070f5506b042a3d9a1442c73d org.opencontainers.image.source:https://github.com/go-gitea/gitea.git org.opencontainers.image.url:https://github.com/go-gitea/gitea]  <nil> []}
 
-svc@busqueda:~$ sudo /usr/bin/python3 /opt/scripts/system-checkup.py docker-inspect {{.Config}} mysql_db
+svc@busqueda:~$ sudo /usr/bin/python3 /opt/scripts/system-checkup.py docker-inspect \{\{.Config\}\} mysql_db
 {f84a6b33fb5a   false false false map[3306/tcp:{} 33060/tcp:{}] false false false [MYSQL_ROOT_PASSWORD=jI86kGUuj87guWr3RyF MYSQL_USER=gitea MYSQL_PASSWORD=yuiu1hoiu4i5ho1uh MYSQL_DATABASE=gitea PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin GOSU_VERSION=1.14 MYSQL_MAJOR=8.0 MYSQL_VERSION=8.0.31-1.el8 MYSQL_SHELL_VERSION=8.0.31-1.el8] [mysqld] <nil> false mysql:8 map[/var/lib/mysql:{}]  [docker-entrypoint.sh] false  [] map[com.docker.compose.config-hash:1b3f25a702c351e42b82c1867f5761829ada67262ed4ab55276e50538c54792b com.docker.compose.container-number:1 com.docker.compose.oneoff:False com.docker.compose.project:docker com.docker.compose.project.config_files:docker-compose.yml com.docker.compose.project.working_dir:/root/scripts/docker com.docker.compose.service:db com.docker.compose.version:1.29.2]  <nil> []}
 ```
 
@@ -155,7 +155,7 @@ HTTP request sent, awaiting response... 200 OK
 Length: 250 [application/x-sh]
 Saving to: ‘full-checkup.sh’
 
-full-checkup.sh                                            100%[========================================================================================================================================>]     250  --.-KB/s    in 0s      
+full-checkup.sh                                            100%[========================================================================================================================================>]     250  --.-KB/s    in 0s
 
 2023-06-12 11:13:44 (32.4 MB/s) - ‘full-checkup.sh’ saved [250/250]
 ```

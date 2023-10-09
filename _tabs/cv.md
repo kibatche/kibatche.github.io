@@ -2,9 +2,10 @@
 title: CV
 order: 2
 icon: fas fa-file
-img_path: /assets/img/icons
+img_path: "/assets/img/icons"
 pin: true
 ---
+
 [![download](/resume/download.svg){: w="100" h="100" .left}](/assets/downloads/cv_fr.pdf)
 
 ---
@@ -14,12 +15,12 @@ pin: true
 # Chérif BADAD
 
 ### Etudiant en sciences de l'informatique à l'école 42 Paris, prépare un équivalent master (RNCP) Administration des systèmes d'information, réseaux et sécurité.
-### _Disponible pour un stage ou en apprentissage sur Brest et alentours._
+### _Disponible pour un stage ou en apprentissage en remote ou sur Brest et alentours._
 
 ---
 
 > Après plusieurs années à enseigner le montage vidéo et le graphisme, je me suis réorienté dans les domaines qui me passionnent :
-> celui de l'informatique et plus spécifiquement ses composantes administration système et réseau ainsi que la cybersécurité.
+> celui de l'informatique et plus spécifiquement ses composantes sécurité et *blue team*. 
 
 ---
 ```bash
@@ -45,8 +46,14 @@ _Depuis Mai 2021_
 > Equivalent Master commencé au mois de Mars 2023 en Administration des systèmes d'information, réseaux et sécurité.
 {: .prompt-info}
 
-- [x] taskmaster :
-    - Un programme comme [Supervisor](http://supervisord.org/) via un design client/serveur et des sockets Unix. Ecrit à 4 mains en python.
+- [x] taskmaster [![Git](git/git-plain.svg){: width="20" height="20" .normal}](https://github.com/owalid/task_master)
+    - Un programme comme [Supervisor](http://supervisord.org/) via un design client/serveur et des sockets Unix. Écrit à 4 mains en python.
+- [x] matt daemon [![Git](git/git-plain.svg){: width="20" height="20" .normal}](https://github.com/owalid/matt-daemon)
+    - Un daemon écrit en C++ qui logue des événements (les événement unix par exemple *via* l'api dédiée). Design client/serveur, chiffrement RSA. Écrit à 4 mains.
+- [x] BADASS
+    - Simulation d'un réseau de type Datacenter / FAI sur GNS3 et docker
+- [x] snow crash, rainfall
+    - `python2.7 -c 'import struct; print "Pwn de binaire" * 42 + struct.pack("I", 0xDEAD)'`
 
 > Le [tronc commun](https://raw.githubusercontent.com/0xbatche/0xbatche.github.io/master/common-core-42.png) couvre les langages C et C++ sur différents aspects. Quelques projets pertinents:
 {: .prompt-info}
@@ -114,7 +121,7 @@ _2014 à 2019_
 ---
 
 ## $> {Soft}-Skills
-![C](c/c-plain.svg){: width="50" height="50" .normal}![Cplusplus](cplusplus/cplusplus-plain.svg){: width="50" height="50" .normal}![Python](python/python-plain.svg){: width="50" height="50" .normal}![bash](bash/bash-plain.svg){: width="50" height="50" .normal}![Linux](linux/linux-plain.svg){: width="50" height="50" .normal}![Windows](windows8/windows8-original.svg){: width="50" height="50" .normal}![Vim](vim/vim-plain.svg){: width="50" height="50" .normal}![Visual Studio Code](visualstudio/visualstudio-plain.svg){: width="50" height="50" .normal}![Git](git/git-plain.svg){: width="50" height="50" .normal}
+![C](c/c-plain.svg){: width="50" height="50" .normal}![Cplusplus](cplusplus/cplusplus-plain.svg){: width="50" height="50" .normal}![Python](python/python-plain.svg){: width="50" height="50" .normal}![bash](bash/bash-plain.svg){: width="50" height="50" .normal}![Linux](linux/linux-original.svg){: width="50" height="50" .normal}![Windows](windows8/windows8-original.svg){: width="50" height="50" .normal}![Vim](vim/vim-plain.svg){: width="50" height="50" .normal}![Visual Studio Code](visualstudio/visualstudio-plain.svg){: width="50" height="50" .normal}![Git](git/git-plain.svg){: width="50" height="50" .normal}
 
  ![Docu](softskills/docreporting.svg){: width="270" height="270" .normal}![Tests](softskills/tests.svg){: width="73" height="73" .normal}![Tech Watch](softskills/veilleinfo.svg){: width="205" height="205" .normal}
 
@@ -141,6 +148,7 @@ _2014 à 2019_
 
 - Hack the Box University CTF 2022: 4ème / 941 équipes  => Un CTF qui ne regroupe que des universités du monde entier 
 - Hack the Box Cyberapocalyspe CTF 2023: 71ème / 6482 équipes => Un CTF qui regroupe principalement des professionnel.le.s du monde entier
+- HeroCTF V5 12ème / 1080 équipes => Un CTF super cool qui regroupe des personnes d'horizons différents
 
 ---
 
@@ -155,4 +163,3 @@ _2014 à 2019_
 ### $> Langues
 - Français (maternelle)
 - Anglais (technique)
-

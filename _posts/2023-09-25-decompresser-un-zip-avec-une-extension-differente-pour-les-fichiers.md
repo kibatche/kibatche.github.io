@@ -1,5 +1,6 @@
 ---
-title: Décompresser un zip avec une extension différente pour les fichiers.
+title: Comment faire en sorte qu'un fichier "shell.php .pdf" devienne "shell.php"
+  via la décompression d'un zip ?
 img_path: "/assets/img/posts/file_zip_upload_with_different_name"
 categories:
 - Vulnérabilités Web
@@ -8,7 +9,7 @@ categories:
 
 ## Introduction
 
-> À l'occasion de la résolution d'une machine hack the box, une incompréhension de ma part à propos d'un payload a mené à la "découverte" d'une chose plutôt rigolote et qui pourrait s'avérer utile dans certain cas précis : avoir une archive zip où, un fichier nommé par exemple `shell.php. pdf`se transforme en `shell.php` à la décompression.
+> À l'occasion de la résolution d'une machine hack the box, une incompréhension de ma part à propos d'un payload a mené à la "découverte" d'un comportement plutôt rigolot et qui pourrait s'avérer utile dans certain cas précis : avoir une archive zip où, un fichier nommé par exemple `shell.php. pdf`se transforme en `shell.php` à la décompression. Testé avec 7z et zip sur ubuntu.
 
 ### Comment ça se passe
 
@@ -49,10 +50,6 @@ create_zip()
 
 ### Dans quels cas c'est utile ?
 
-De ce que je peux supputer, c'est utile si l'application ne checke pas la conformité entre le nom du fichier et ce qui est effectivement décompressé. Si l'application ne teste que le *local file name*,  c'est une bonne indication pour au moins tester cette petite technique.
+De ce que je peux supputer, c'est utile si l'application ne checke pas la conformité entre le nom du fichier et ce qui est effectivement décompressé. 
 
-On peut la retrouver dans hacktrick [ici](https://github.com/carlospolop/hacktricks/blob/master/pentesting-web/file-upload.md#decompress-with-a-different-name) \o/
- *
-
-
-* À l'heure actuelle le script original ne fonctionne qu'avec python ou python2.7... Une PR a été faite afin de rendre le script compatible avec python2.7 et python3, en reprenant le code original de hacktricks.
+Cependant, si l'application ne teste que le *local file name* vis à vis du nom décompressé, cela laisse une petite fenêtre de temps pour pouvoir par exemple exécuter le fichier si exécutable (non testé) avant que le nom soit effectivement testé. Le plus safe est de tester l'égalité du *local file name* et du nom dans le *central directory header*. De plus, il faut absolument éviter de placer le fichier dans un dossier exécutable et au nom facilement devinable.

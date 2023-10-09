@@ -9,7 +9,7 @@ categories:
 
 ## Introduction
 
-> À l'occasion de la résolution d'une machine hack the box, une incompréhension de ma part à propos d'un payload a mené à la "découverte" d'un comportement plutôt rigolo et qui pourrait s'avérer utile dans certain cas précis : avoir une archive zip où, un fichier nommé par exemple `shell.php. pdf`se transforme en `shell.php` à la décompression. Testé avec 7z et zip sur ubuntu.
+> À l'occasion de la résolution d'une machine hack the box, une incompréhension de ma part à propos d'un payload a mené à la "découverte" d'un comportement plutôt rigolo et qui pourrait s'avérer utile dans certains cas précis : avoir une archive zip où, un fichier nommé par exemple `shell.php. pdf`se transforme en `shell.php` à la décompression. Testé avec 7z et zip sur ubuntu.
 
 ### Comment ça se passe
 

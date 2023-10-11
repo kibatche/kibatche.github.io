@@ -9,7 +9,7 @@ pin: true
 [![download](/resume/download.svg){: w="100" h="100" .left}](/assets/downloads/cv_fr.pdf)
 
 ---
-> ![mail](/resume/mail.svg){: w="15" h="15" .left} batche@protonmail.com ![phone](/resume/phone.svg){: w="15" h="15" .normal} 06 58_75_01 28
+> ![mail](/resume/mail.svg){: w="15" h="15" .left} batche@protonmail.com ![phone](/resume/phone.svg){: w="15" h="15" .normal} 06.58.75.01.28
 {: .prompt-info}
 
 # Chérif BADAD
@@ -20,7 +20,7 @@ pin: true
 ---
 
 > Après plusieurs années à enseigner le montage vidéo et le graphisme, je me suis réorienté dans les domaines qui me passionnent :
-> celui de l'informatique et plus spécifiquement ses composantes sécurité et *blue team*. 
+> celui de l'informatique et plus spécifiquement ses composantes sécurité et *blue team*.
 
 ---
 ```bash
@@ -49,13 +49,13 @@ _Depuis Mai 2021_
 - [x] taskmaster [![Git](git/git-plain.svg){: width="20" height="20" .normal}](https://github.com/owalid/task_master)
     - Un programme comme [Supervisor](http://supervisord.org/) via un design client/serveur et des sockets Unix. Écrit à 4 mains en python.
 - [x] matt daemon [![Git](git/git-plain.svg){: width="20" height="20" .normal}](https://github.com/owalid/matt-daemon)
-    - Un daemon écrit en C++ qui logue des événements (les événement unix par exemple *via* l'api dédiée). Design client/serveur, chiffrement RSA. Écrit à 4 mains.
+    - Un daemon écrit en C++ qui logue des événements (les événements unix par exemple *via* l'api dédiée). Design client/serveur, chiffrement RSA. Écrit à 4 mains.
 - [x] BADASS
     - Simulation d'un réseau de type Datacenter / FAI sur GNS3 et docker
 - [x] snow crash, rainfall
     - `python2.7 -c 'import struct; print "Pwn de binaire" * 42 + struct.pack("I", 0xDEAD)'`
 
-> Le [tronc commun](https://raw.githubusercontent.com/0xbatche/0xbatche.github.io/master/common-core-42.png) couvre les langages C et C++ sur différents aspects. Quelques projets pertinents:
+> Le tronc commun couvre les langages C et C++ sur différents aspects. Quelques projets pertinents:
 {: .prompt-info}
 
 - [x] ft_transcendence
@@ -121,7 +121,7 @@ _2014 à 2019_
 ---
 
 ## $> {Soft}-Skills
-![C](c/c-plain.svg){: width="50" height="50" .normal}![Cplusplus](cplusplus/cplusplus-plain.svg){: width="50" height="50" .normal}![Python](python/python-plain.svg){: width="50" height="50" .normal}![bash](bash/bash-plain.svg){: width="50" height="50" .normal}![Linux](linux/linux-original.svg){: width="50" height="50" .normal}![Windows](windows8/windows8-original.svg){: width="50" height="50" .normal}![Vim](vim/vim-plain.svg){: width="50" height="50" .normal}![Visual Studio Code](visualstudio/visualstudio-plain.svg){: width="50" height="50" .normal}![Git](git/git-plain.svg){: width="50" height="50" .normal}
+![C](c/c-plain.svg){: width="50" height="50" .normal}![Cplusplus](cplusplus/cplusplus-plain.svg){: width="50" height="50" .normal}![Python](python/python-plain.svg){: width="50" height="50" .normal}![bash](bash/bash-plain.svg){: width="50" height="50" .normal}![Linux](linux/linux-original.svg){: width="50" height="50" .normal}![Windows](windows8/windows8-original.svg){: width="50" height="50" .normal}![Vim](vim/vim-plain.svg){: width="50" height="50" .normal}![Visual Studio Code](vscode/vscode-original.svg){: width="50" height="50" .normal}![Git](git/git-plain.svg){: width="50" height="50" .normal}
 
  ![Docu](softskills/docreporting.svg){: width="270" height="270" .normal}![Tests](softskills/tests.svg){: width="73" height="73" .normal}![Tech Watch](softskills/veilleinfo.svg){: width="205" height="205" .normal}
 
@@ -130,10 +130,11 @@ _2014 à 2019_
 ---
 
 ## $> Intérêts && Activités
-![cybersecurite](interets/cybersec.svg){: width="200" height="200" .normal} ![hack the box](hackthebox/htb.svg){: width="30" height="30" .normal}![root-me](rootme/rootme.svg){: width="35" height="35" .normal}![CTF](interets/ctf.svg){: width="40" height="40" .normal}
+![cybersecurite](interets/cybersec.svg){: width="200" height="200" .normal} ![hack the box](hackthebox/htb.svg){: width="30" height="30" .normal}![root-me](rootme/rootme.svg){: width="35" height="35" .normal}![CTF](interets/ctf.svg){: width="40" height="40" .normal}![portswigger](portswigger/Logo_of_PortSwigger.svg){: width="150" height="150" .normal}
 
->[Profil Hack the box](https://app.hackthebox.com/profile/789938)
->[Profil Root-me](https://www.root-me.org/kibatche)
+>[Profil Hack the box](https://app.hackthebox.com/profile/789938) / [Profil Root-me](https://www.root-me.org/kibatche)
+>
+>PortSwigger (72% des labs) : 56/56 Labs Apprentice 125/162 Labs Practitionner 4/36 Labs Expert
 {: .prompt-info}
 
 ![Politic](interets/politique.svg){: width="100" height="100" .normal} ![Géo Politique](interets/geopolitique.svg){: width="100" height="100" .normal} ![Sciences](interets/sciences.svg){: width="100" height="100" .normal} ![Ecologie](interets/ecologie.svg){: width="100" height="100" .normal}
@@ -146,7 +147,7 @@ _2014 à 2019_
 
 ### $> Ctf
 
-- Hack the Box University CTF 2022: 4ème / 941 équipes  => Un CTF qui ne regroupe que des universités du monde entier 
+- Hack the Box University CTF 2022: 4ème / 941 équipes  => Un CTF qui ne regroupe que des universités du monde entier
 - Hack the Box Cyberapocalyspe CTF 2023: 71ème / 6482 équipes => Un CTF qui regroupe principalement des professionnel.le.s du monde entier
 - HeroCTF V5 12ème / 1080 équipes => Un CTF super cool qui regroupe des personnes d'horizons différents
 

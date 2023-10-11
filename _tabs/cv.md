@@ -9,7 +9,7 @@ pin: true
 [![download](/resume/download.svg){: w="100" h="100" .left}](/assets/downloads/cv_fr.pdf)
 
 ---
-> ![mail](/resume/mail.svg){: w="15" h="15" .left} batche@protonmail.com ![phone](/resume/phone.svg){: w="15" h="15" .normal} 06.58.75.01.28
+> ![mail](/resume/mail.svg){: w="15" h="15" .left} batche[at]protonmail[dot]com ![phone](/resume/phone.svg){: w="15" h="15" .normal} 06.58.75.01.28
 {: .prompt-info}
 
 # Chérif BADAD

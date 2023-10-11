@@ -155,7 +155,7 @@ _2014 à 2019_
 
 ### $> Parcours scolaire
 - Ecole 42 Paris _Depuis Mai 2021_
-- Hack The Box Academy + quelques autres sites (cours sur la cybersécurité sur linux, windows AD, app web etc.)
+- Hack The Box Academy + quelques autres sites
 - Chef Monteur, 3IS, _2013_
 - Baccalauréat Scientifique, _2008_
 

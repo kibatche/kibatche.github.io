@@ -30,13 +30,26 @@ $> ls -a
 {: .nolineno}
 # $> Expériences et formations professionnelles
 ---
+
+## Hack the Box, root-me, portswigger
+-> _Online, depuis juin 2022_
+
+![Alt text](interets/recherche.svg){: width="140" height="140" .normal} ![Pédagogie](softskills/pedagogie.svg){: width="95" height="95" .normal} ![Abnégation](interets/abnegation.svg){: width="140" height="140" .normal} ![Partage](interets/partage_connaissances.svg){: width="140" height="140" .normal} ![Guessing ?](interets/guessing.svg){: width="140" height="140" .normal}
+
+> Mes autres écoles ! Htb est mon site favori sur ce sujet, je viens de temps à autre sur root-me. PortSwigger est une source essentielle de connaissances sur les vulnérabilités web. Je m'efforce depuis quelques temps d'écrire un write-up sur ma démarche de résolution pour chacune des boxes que je termine. [Disponibles ici](https://kibatche.github.io/categories/write-up/) pour les boxes retirées.
+
+>![hack the box](hackthebox/htb.svg){: width="30" height="30" .normal}
+>[Profil Hack the box](https://app.hackthebox.com/profile/789938)
+>![root-me](rootme/rootme.svg){: width="35" height="35" .normal}[Profil Root-me](https://www.root-me.org/kibatche)
+
+>![portswigger](portswigger/Logo_of_PortSwigger.svg){: width="120" height="120" .normal}
+>
+>72% des labs faits (avec Burp Community) : 56/56 Labs Apprentice 125/162 Labs Practionner et 4/36 Labs Expert
+
 ## Ecole 42
--> _Paris_
+-> _Paris, depuis Mai 2021_
 
 **Etudiant**
-
-_Depuis Mai 2021_
-
 
 > Technologies & langages de programmation
 
@@ -83,11 +96,9 @@ _Depuis Mai 2021_
 
 ## Monteur vidéo, graphiste
 
-_-> Région Parisienne, France (ex: [3IS](https://www.3is.fr/))_
+_-> Région Parisienne, France (ex: [3IS](https://www.3is.fr/)), de 2013 à 2020_
 
 **Production, réalisation, livraison**
-
-_2013 à 2020_
 
 ![Adobe Premiere Pro](premierepro/premierepro-plain.svg){: width="40" height="40" .normal}![Adobe Photoshop](photoshop/photoshop-plain.svg){: width="40" height="40" .normal}![Adobe After Effects](aftereffects/aftereffects-plain.svg){: width="40" height="40" .normal}
 
@@ -106,11 +117,9 @@ _2013 à 2020_
 
 ## Enseignant en montage vidéo et graphisme
 
-_-> Saint-Quentin en Yvelines, France (3IS)_
+_-> Saint-Quentin en Yvelines, France (3IS), de 2014 à 2019_
 
 **Ecriture des cours, enseigner les aspects technique et artistique de ces domaines**
-
-_2014 à 2019_
 
 ![Pédagogie](softskills/pedagogie.svg){: width="100" height="100" .normal}![Connaissances](softskills/connaissances.svg){: width="135" height="135" .normal}![Rigueur](softskills/rigueur.svg){: width="83" height="83" .normal}
 
@@ -130,12 +139,8 @@ _2014 à 2019_
 ---
 
 ## $> Intérêts && Activités
-![cybersecurite](interets/cybersec.svg){: width="200" height="200" .normal} ![hack the box](hackthebox/htb.svg){: width="30" height="30" .normal}![root-me](rootme/rootme.svg){: width="35" height="35" .normal}![CTF](interets/ctf.svg){: width="40" height="40" .normal}![portswigger](portswigger/Logo_of_PortSwigger.svg){: width="150" height="150" .normal}
 
->[Profil Hack the box](https://app.hackthebox.com/profile/789938) / [Profil Root-me](https://www.root-me.org/kibatche)
->
->PortSwigger (72% des labs) : 56/56 Labs Apprentice 125/162 Labs Practitionner 4/36 Labs Expert
-{: .prompt-info}
+![CTF](interets/ctf.svg){: width="40" height="40" .normal}
 
 ![Politic](interets/politique.svg){: width="100" height="100" .normal} ![Géo Politique](interets/geopolitique.svg){: width="100" height="100" .normal} ![Sciences](interets/sciences.svg){: width="100" height="100" .normal} ![Ecologie](interets/ecologie.svg){: width="100" height="100" .normal}
 

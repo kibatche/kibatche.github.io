@@ -4,6 +4,7 @@ title: "[HTB CTF CYBER APO 2023] Forensic Windows : Artifact of dangerous sighti
 categories:
 - CTF
 - Forensics
+- Write-up
 image:
   path: htb_cyber_apo_front_image.png
   alt: htb cyberapocalypse 2023

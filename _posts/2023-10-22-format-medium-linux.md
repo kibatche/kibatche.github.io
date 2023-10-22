@@ -92,7 +92,7 @@ if (isset($_POST['txt']) && isset($_POST['id'])) {
 }
 ```
 
-2) On voit ci-dessous comment est déterminée le fait d'être pro ou non. Il s'agit tout simplement de voir si la variable redis du champ `pro` est est à true ou false. Ce champ est mis à false dès la création du compte.
+2) On voit ci-dessous comment est déterminé le fait d'être pro ou non. Il s'agit tout simplement de voir si la variable redis du champ `pro` est est à true ou false. Ce champ est mis à false dès la création du compte.
 
 ```php
 function isPro() {

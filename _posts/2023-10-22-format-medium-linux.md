@@ -203,7 +203,7 @@ Nous voilà pro !
 
 ### bulletproof.php && RCE
 
-Le plus dur est fait. Nous savons que nous avons des droits de lecture / écriture sur de nombreux fichiers, dont celui qui concerne l'upload d'image, `bulletproof.php`. Mais seulement pendant un court laps de temps :
+Le plus dur est fait. Nous savons que nous avons des droits de lecture / écriture sur de nombreux fichiers, dont celui qui concerne l'upload d'image, `bulletproof.php` :
 
 ```php
         system("chmod +w /var/www/microblog/" . $blogName);
@@ -216,13 +216,11 @@ Le plus dur est fait. Nous savons que nous avons des droits de lecture / écritu
 
 Ce fichier php, [après une recherche](https://github.com/samayo/bulletproof), ne s'avère pas spécialement vulnérable  à quoique ce soit, même s'il semble avoir fait [polémique](https://github.com/samayo/bulletproof/issues/90) quand au faux sentiment de sécurité qu'il procurerait.
 
-L'idée qui semble la plus simple est donc de simplement réécrire ce fichier, en étant assez rapide pour le faire. On sait que nous avons les droits d'écriture dessus pendant une durée assez courte, et surtout on sait qu'il est exécutable en tant que fichier php. Il semble donc parfait pour nos besoins.
+L'idée qui semble la plus simple est donc de simplement réécrire ce fichier. On sait que nous avons les droits d'écriture dessus, et surtout on sait qu'il est exécutable en tant que fichier php. Il semble donc parfait pour nos besoins.
 
-> Vraiment le plus simple ? Le write-up officiel procède différemment : vu que nous avons les droits en écriture / lecture sur le dossier uploads, il écrit simplement un fichier php dans ce dossier et l'exécute. Pour ma part, je n'avais *apriori* pas remarqué cette possibilité. Il y avait donc encore plus simple.
+> Vraiment le plus simple ? Le write-up officiel procède différemment : vu que nous avons les droits en écriture / lecture sur le dossier uploads, il écrit simplement un fichier php dans ce dossier et l'exécute. Pour ma part, je n'avais *apriori* pas remarqué cette possibilité. Ce w-u étant en partie écrit bien après la résolution de la machine, j'ai du mal à me souvenir exactement ce qu'il en était de mon côté. Mais clairement, il y avait encore plus simple.
 
-Même si la boxe a subi quelques changements (voir les changelogs), pour notre cas nous avons bien une race condition encore exploitable même après mise à jour, qu'on peut par ailleurs déclencher à chaque fois qu'on visite la page edit. En effet, le fichier php est copié à chaque fois qu'on visite la page d'édition, nous laissant le nombre d'essais nécessaires afin de pouvoir réécrire le fichier.
-
-Réécriture :
+Réécriture du fichier :
 
 ![6.png](6.png)
 

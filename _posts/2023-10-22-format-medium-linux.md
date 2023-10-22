@@ -73,7 +73,7 @@ Revenons à l'instance gitlab. On a accès à tout le code source. Il s'avère q
 
 Présentons quelques portions de code intéressantes :
 
-1) Si les variables post `txt` et `id` sont définies, selon le code ci-dessous, alors nous allons pouvoir écrire dans un fichier qui se nommera selon la variable `id` avec le contenu de la variable `txt`. Étant donné qu'il n'y a absolument aucune désinfection des paramètres, nous sommes en mesure d'écrire sur n'importe quel fichier pour lesquels nous avons les droits d'écritures. De plus, on peut aussi faire une `LFI`, et donc lire le fichier. On peut sans conteste affirmer qu'il s'agit là d'un excellent boulot de développement !
+1) Si les variables post `txt` et `id` sont définies, selon le code ci-dessous, alors nous allons pouvoir écrire dans un fichier qui se nommera selon la variable `id` avec le contenu de la variable `txt`. Étant donné qu'il n'y a absolument aucune désinfection des paramètres, nous sommes en mesure d'écrire sur n'importe quel fichier pour lesquels nous avons les droits d'écriture. Cela nous permet également de lire le fichier. On peut sans conteste affirmer qu'il s'agit là d'un excellent boulot de développement !
 
 ```bash
 if (isset($_POST['txt']) && isset($_POST['id'])) {

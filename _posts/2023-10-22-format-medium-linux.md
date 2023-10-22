@@ -216,7 +216,7 @@ Le plus dur est fait. Nous savons que nous avons des droits de lecture / écritu
 
 Ce fichier php, [après une recherche](https://github.com/samayo/bulletproof), ne s'avère pas spécialement vulnérable  à quoique ce soit, même s'il semble avoir fait [polémique](https://github.com/samayo/bulletproof/issues/90) quand au faux sentiment de sécurité qu'il procurerait.
 
-L'idée qui semble la plus simple est donc de simplement réécrire ce fichier. On sait que nous avons les droits d'écriture dessus, et surtout on sait qu'il est exécutable en tant que fichier php. Il semble donc parfait pour nos besoins.
+L'idée qui semble la plus simple est donc de réécrire ce fichier. On sait que nous avons les droits d'écriture dessus, et surtout on sait qu'il est exécutable en tant que fichier php. Il semble donc parfait pour nos besoins.
 
 > Vraiment le plus simple ? Le write-up officiel procède différemment : vu que nous avons les droits en écriture / lecture sur le dossier uploads, il écrit simplement un fichier php dans ce dossier et l'exécute. Pour ma part, je n'avais *apriori* pas remarqué cette possibilité. Ce w-u étant en partie écrit bien après la résolution de la machine, j'ai du mal à me souvenir exactement ce qu'il en était de mon côté. Mais clairement, il y avait encore plus simple.
 

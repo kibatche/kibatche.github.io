@@ -135,7 +135,9 @@ function provisionProUser() {
 La marche à suivre semble dès lors la suivante :
 
 1) Devenir pro en configurant la clé redis "pro" à `true`
+
 2) Trouver un moyen soit d'abuser du fichier php d'upload, soit tout simplement de le réécrire. Nous verrons qu'il y a une autre méthode qui m'a échappée, encore plus simple.
+
 3) Grâce à l'étape 2), choper un reverse shell.
 
 ### Devenir pro

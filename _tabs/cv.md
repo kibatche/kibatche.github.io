@@ -131,7 +131,7 @@ _-> Saint-Quentin en Yvelines, France (3IS), de 2014 à 2019_
 ---
 
 ## $> {Soft}-Skills
-![C](c/c-plain.svg){: width="50" height="50" .normal}![Cplusplus](cplusplus/cplusplus-plain.svg){: width="50" height="50" .normal}![Python](python/python-plain.svg){: width="50" height="50" .normal}![bash](bash/bash-plain.svg){: width="50" height="50" .normal}![Linux](linux/linux-original.svg){: width="50" height="50" .normal}![Windows](windows8/windows8-original.svg){: width="50" height="50" .normal}![Vim](vim/vim-plain.svg){: width="50" height="50" .normal}![Visual Studio Code](vscode/vscode-original.svg){: width="50" height="50" .normal}![Git](git/git-plain.svg){: width="50" height="50" .normal}
+![C](c/c-plain.svg){: width="50" height="50" .normal}![Cplusplus](cplusplus/cplusplus-plain.svg){: width="50" height="50" .normal}![Python](python/python-plain.svg){: width="50" height="50" .normal}![Go](python/go-plain.svg){: width="50" height="50" .normal}![bash](bash/bash-plain.svg){: width="50" height="50" .normal}![Linux](linux/linux-original.svg){: width="50" height="50" .normal}![Windows](windows8/windows8-original.svg){: width="50" height="50" .normal}![Vim](vim/vim-plain.svg){: width="50" height="50" .normal}![Visual Studio Code](vscode/vscode-original.svg){: width="50" height="50" .normal}![Git](git/git-plain.svg){: width="50" height="50" .normal}
 
  ![Docu](softskills/docreporting.svg){: width="270" height="270" .normal}![Tests](softskills/tests.svg){: width="73" height="73" .normal}![Tech Watch](softskills/veilleinfo.svg){: width="205" height="205" .normal}
 

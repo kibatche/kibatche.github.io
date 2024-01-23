@@ -64,7 +64,7 @@ $> ls -a
 - [x] matt daemon [![Git](git/git-plain.svg){: width="20" height="20" .normal}](https://github.com/owalid/matt-daemon)
     - Un daemon écrit en C++ qui logue des événements (les événements unix par exemple *via* l'api dédiée). Design client/serveur, chiffrement RSA. Écrit à 4 mains.
 - [x] Inception of Things [![Git](git/git-plain.svg){: width="20" height="20" .normal}](https://github.com/owalid/IOT)
-- [x] BADASS [![Git](git/git-plain.svg){: width="20" height="20" .normal}](https://github.com/owalid/IOT](https://github.com/kibatche/BADASS)
+- [x] BADASS [![Git](git/git-plain.svg){: width="20" height="20" .normal}](https://github.com/kibatche/BADASS)
     - Simulation d'un réseau de type Datacenter / FAI sur GNS3 et docker
 - [x] snow crash, rainfall
     - `python2.7 -c 'import struct; print "Pwn de binaire" * 42 + struct.pack("I", 0xDEAD)'`

@@ -12,7 +12,7 @@ tags:
   - xss
 ---
 
-Ce week end s'est tenu le bi0s ctf 2024. Un CTF jeopardy difficile avec des équipes de haut niveau.
+Ce week-end s'est tenu le bi0s ctf 2024. Un CTF jeopardy difficile avec des équipes de haut niveau.
 
 Pour ma part, je me suis attelé à un seul challenge : image-gallery, dans la catégorie web.
 

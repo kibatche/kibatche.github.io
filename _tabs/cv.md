@@ -10,7 +10,7 @@ pin: true
 
 ---
 > ![mail](/resume/mail.svg){: w="15" h="15" .left} batche[at]protonmail[dot]com ![phone](/resume/phone.svg){: w="15" h="15" .normal} 06.58.75.01.28
-{: .prompt-info}
+{: .prompt-info} [github](https://github.com/kibatche)
 
 # Chérif BADAD
 
@@ -63,7 +63,8 @@ $> ls -a
     - Un programme comme [Supervisor](http://supervisord.org/) via un design client/serveur et des sockets Unix. Écrit à 4 mains en python.
 - [x] matt daemon [![Git](git/git-plain.svg){: width="20" height="20" .normal}](https://github.com/owalid/matt-daemon)
     - Un daemon écrit en C++ qui logue des événements (les événements unix par exemple *via* l'api dédiée). Design client/serveur, chiffrement RSA. Écrit à 4 mains.
-- [x] BADASS
+- [x] Inception of Things [![Git](git/git-plain.svg){: width="20" height="20" .normal}](https://github.com/owalid/IOT)
+- [x] BADASS [![Git](git/git-plain.svg){: width="20" height="20" .normal}](https://github.com/kibatche/BADASS)
     - Simulation d'un réseau de type Datacenter / FAI sur GNS3 et docker
 - [x] snow crash, rainfall
     - `python2.7 -c 'import struct; print "Pwn de binaire" * 42 + struct.pack("I", 0xDEAD)'`
@@ -130,7 +131,7 @@ _-> Saint-Quentin en Yvelines, France (3IS), de 2014 à 2019_
 ---
 
 ## $> {Soft}-Skills
-![C](c/c-plain.svg){: width="50" height="50" .normal}![Cplusplus](cplusplus/cplusplus-plain.svg){: width="50" height="50" .normal}![Python](python/python-plain.svg){: width="50" height="50" .normal}![bash](bash/bash-plain.svg){: width="50" height="50" .normal}![Linux](linux/linux-original.svg){: width="50" height="50" .normal}![Windows](windows8/windows8-original.svg){: width="50" height="50" .normal}![Vim](vim/vim-plain.svg){: width="50" height="50" .normal}![Visual Studio Code](vscode/vscode-original.svg){: width="50" height="50" .normal}![Git](git/git-plain.svg){: width="50" height="50" .normal}
+![C](c/c-plain.svg){: width="50" height="50" .normal}![Cplusplus](cplusplus/cplusplus-plain.svg){: width="50" height="50" .normal}![Python](python/python-plain.svg){: width="50" height="50" .normal}![Go](python/go-plain.svg){: width="50" height="50" .normal}![bash](bash/bash-plain.svg){: width="50" height="50" .normal}![Linux](linux/linux-original.svg){: width="50" height="50" .normal}![Windows](windows8/windows8-original.svg){: width="50" height="50" .normal}![Vim](vim/vim-plain.svg){: width="50" height="50" .normal}![Visual Studio Code](vscode/vscode-original.svg){: width="50" height="50" .normal}![Git](git/git-plain.svg){: width="50" height="50" .normal}
 
  ![Docu](softskills/docreporting.svg){: width="270" height="270" .normal}![Tests](softskills/tests.svg){: width="73" height="73" .normal}![Tech Watch](softskills/veilleinfo.svg){: width="205" height="205" .normal}
 

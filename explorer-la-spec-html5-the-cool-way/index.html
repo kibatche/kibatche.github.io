@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src-attr 'unsafe-inline'; base-uri 'self'; connect-src 'self' cloudflareinsights.com; form-action 'self'; frame-src 'self' https://yeswehack.github.io; img-src 'self' https://yeswehack.github.io; script-src 'self' static.cloudflareinsights.com 'sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg=='">
+
+    <title>Explorer la spécification HTML : The cool way | kbtch_</title>
+
+    <link rel="preload" href="https://kibatche.github.io/fonts/FiraCode-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://kibatche.github.io/fonts/FiraCode-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://kibatche.github.io/css/style.css?h=c23ad2687a9f4d2e25f9">
+    <script src="https://kibatche.github.io/js/auto-close-popover-on-resize.js?h=4ef87d6fc7b98b22e044" defer></script>
+    <script src="https://kibatche.github.io/js/copy-code-to-clipboard.js?h=6eec6d5a29e934c1de32" defer></script>
+
+    <link rel="canonical" href="https://kibatche.github.io/explorer-la-spec-html5-the-cool-way/">
+    <link rel="alternate" type="application/atom+xml" href="https://kibatche.github.io/atom.xml" title="kbtch_">
+    
+    <meta name="author" content="kbtch_">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#211f1a">
+    <meta name="color-scheme" content="dark">
+
+    <meta property="og:title" content="Explorer la spécification HTML : The cool way">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://kibatche.github.io/explorer-la-spec-html5-the-cool-way/">
+    <meta property="og:description" content="think|hack&gt;results">
+    <meta property="og:site_name" content="kbtch_">
+    <meta property="og:updated_time" content="2026-04-10T18:22:42.712582090+00:00">
+    <meta property="article:published_time" content="2026-03-28T00:00:00+00:00">
+
+</head>
+
+<body class="layout-center" data-theme="terminus">
+    <header class="header">
+        <div class="header-container">
+            <span class="header-logo-container">
+                <a href="https://kibatche.github.io">
+                    <span class="logo">kbtch_</span>
+                </a>
+            </span>
+        </div>
+    </header>
+    <main id="main">
+        <article class="post content">
+            <header>
+                <h1 class="post-title">
+                    <a href="https://kibatche.github.io/explorer-la-spec-html5-the-cool-way/">Explorer la spécification HTML : The cool way</a>
+                </h1>
+                <ul class="post-meta hidden">
+                    <li title="Published on 2026-03-28"><time datetime="2026-03-28">2026.03.28</time></li>
+                    <li role="separator" aria-hidden="true">::</li>
+                    <li title="4532 words"><time datetime="PT23M">23 min</time> read</li>
+                </ul>
+            </header>
+
+
+    <ul>
+    
+        <li>
+            <a href="https://kibatche.github.io/explorer-la-spec-html5-the-cool-way/#introduction">Introduction</a>
+            
+                <ul>
+                    
+                        <li>
+                            <a href="https://kibatche.github.io/explorer-la-spec-html5-the-cool-way/#pourquoi-une-telle-demarche">Pourquoi une telle démarche</a>
+                            
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+        <li>
+            <a href="https://kibatche.github.io/explorer-la-spec-html5-the-cool-way/#partie-i-un-peu-de-theorie">Partie I : Un peu de théorie</a>
+            
+                <ul>
+                    
+                        <li>
+                            <a href="https://kibatche.github.io/explorer-la-spec-html5-the-cool-way/#c-est-quoi-html5">C&#x27;est quoi &quot;HTML5&quot;</a>
+                            
+                        </li>
+                    
+                        <li>
+                            <a href="https://kibatche.github.io/explorer-la-spec-html5-the-cool-way/#le-parsing-html">Le parsing HTML</a>
+                            
+                                <ul>
+                                    
+                                        <li>
+                                            <a href="https://kibatche.github.io/explorer-la-spec-html5-the-cool-way/#le-flux-d-octets">Le flux d&#x27;octets</a>
+
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="https://kibatche.github.io/explorer-la-spec-html5-the-cool-way/#la-tokenisation-et-la-construction-de-l-arbre-explications-rapides">La tokenisation et la construction de l&#x27;arbre : explications rapides</a>
+
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="https://kibatche.github.io/explorer-la-spec-html5-the-cool-way/#presentations-de-quelques-variables-utilisees-par-les-agents-utilisateurs">Présentations de quelques variables utilisées par les agents utilisateurs</a>
+
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="https://kibatche.github.io/explorer-la-spec-html5-the-cool-way/#les-noeuds">Les nœuds</a>
+
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+    </ul>
+
+
+<h2 id="introduction">Introduction</h2>
+<p>En fin d'année 2024 et au début de l'année 2025, il y eut deux articles de Kevin Mizu sur la librairie DOMPurify : <a rel="external" href="https://mizu.re/post/exploring-the-dompurify-library-bypasses-and-fixes">Exploring the DOMPurify library: Bypasses and Fixes (1/2)</a> et <a rel="external" href="https://mizu.re/post/exploring-the-dompurify-library-hunting-for-misconfigurations">Exploring the DOMPurify library: Hunting for Misconfigurations (2/2)</a>.</p>
+<p>Ces articles explorent de façon approfondie la librairie <code>DOMPurify</code> et les moyens de la contourner à ce moment là. Pour les personnes qui ne connaissent pas ce qu'est <code>DOMPurify</code>, il s'agit d'une bibliothèque qui permet de désinfecter - <code>sanitize</code> en anglais - les entrées utilisateurs afin d'empêcher l'introduction de code malveillant comme de l'exécution de script (XSS).</p>
+<p>Et en général, ces vulnérabilités surviennent via des mutations de l'arbre généré par le parseur HTML : le DOM. Par exemple <code>DOMPurify</code> (côté client), utilise les données générées par <code>DOMParseur</code>, la fonction générique présente dans tous les programmes prétendant implémenter la spécification <code>HTML</code>. En l'occurrence, les navigateurs, et de façon plus générique les <code>user-agents</code>, les agents utilisateurs en français.</p>
+<p>Cette généricité permet donc à n'importe quel programme d'utiliser le standard HTML.</p>
+<p>Et il s'avère qu'il existe pléthore d'implémentations côté serveur.</p>
+<p>En effet, pour différentes raisons, les langages de programmations côté serveur qui génèrent des applications web (ou des portions de) peuvent avoir besoin de représenter un DOM côté serveur, par exemple pour désinfecter une entrée utilisateur.</p>
+<p>En <code>PHP</code> l'outil le plus connu pour générer un arbre HTML est <code>libxml2</code>. C'est un portage un peu bizarre de la spécification HTML à partir d'une librairie qui a été essentiellement créée pour parser du xml, comme son nom l'indique fort bien. Elle n'est donc absolument pas conforme à la spécification HTML telle que définie par le comité whatwg.</p>
+<p>Depuis PHP 8.4, <code>libxml2</code> a laissé place à un autre parseur : <code>lexbor</code>, qui est exposé via l'API <code>DOM</code>. Ce parseur, créé en C par une seule personne, a pour prétention - sans que ce mot ait ici un sens péjoratif - d'implémenter la spécification HTML dans la globalité, et donc d'être <em>spec compliant</em>. Cela donne la possibilité aux programmes PHP d'utiliser une interface unifiée, débarrassée des problèmes inhérents à <em>libxml2</em>.</p>
+<p>Sans aller plus loin pour l'instant sur ces histoires, il s'agit d'une entreprise gargantuesque : la spécification HTML porte sur plusieurs milliers de lignes, avec des formulations absconses à de nombreux endroits, des ambiguïtés sur ce qu'un programme souhaitant l'implémenter doit faire, des machines à états extrêmement difficiles à comprendre par moment, de nombreuses définitions, des cas limites aux conséquences difficilement observables par la "simple" lecture de la spécification etc.</p>
+<p>En bref, il s'agit d'un travail d'une complexité inouïe qui occasionne forcément des bugs et des divergences avec les parseurs des navigateurs, qui eux même implémentent de façon imparfaite plusieurs points de la spécification HTML5. Et c'est précisément dans ces divergences que surgissent des mutations.</p>
+<h3 id="pourquoi-une-telle-demarche">Pourquoi une telle démarche</h3>
+<p>C'est un sujet qui pourrait paraître dépassé : quel est l'intérêt d'explorer les mécanismes de mutations sur un parseur HTML à l'heure de la toute puissance des sanitizers, du <em>hardening</em> opéré au sein des navigateurs afin de limiter au maximum les possibilités d'exploitation ?</p>
+<p>D'ailleurs nous, petites mains de la sécurité informatique, ne sommes-nous pas voué.es à disparaître, si crétins sommes nous face à la toute puissance de la Déesse IA, dont les Archanges Claude et GPT sont les représentants les plus féroces (et idiots diront certain.es) ?</p>
+<p><img src="https://kibatche.github.io/explorer-la-spec-html5-the-cool-way/mot_crois%C3%A9s.png" alt="mots-croisés" /></p>
+<p>Eh oui... À quoi bon mesdames messieurs, <strong>À QUOI BON</strong> se péter le cerveau ? Pour la gloire ? Pour Sparte ? Pour l'argent ?</p>
+<p>À toutes ces questions, je dirais : la volonté de savoir. Aussi bête que cela.</p>
+<p>Ma connaissance du sujet était quasiment inexistante avant d'entamer ces quelques semaines d'apprentissage, et je souhaitais combler cette lacune.</p>
+<p>Car malgré la complexité du sujet, il y avait un truc : ce qui était présenté par mizu était vraiment <em>cool</em> (oui juste ça c'est suffisant), mais en plus c'était intriguant. Les articles me donnaient envie d'en savoir plus. Et quoi de mieux pour étudier un sujet complexe que de le faire via les potentialités de subversion qu'il renferme ?</p>
+<p>Ce n'est pas à proprement parler d'une méthode <em>Zero to Heroe</em> mais de mon point de vue, étudier une partie de la spécification HTML par ses abus est vraiment une façon excellente de le faire : il y a un côté amusant à la chose, un peu sorcier fou, à tester différentes charges utiles auxquelles on peut penser après la lecture de certaines parties de la spécification. Il était (et ça l'est toujours) inenvisageable pour moi de le faire de la façon conseillée par whatwg :</p>
+<blockquote>
+<p>This specification should be read like all other specifications. First, it should be read cover-to-cover, multiple times. Then, it should be read backwards at least once. Then it should be read by picking random sections from the contents list and following all the cross-references.</p>
+</blockquote>
+<p>En un mot comme en cent :</p>
+<p><img src="https://kibatche.github.io/explorer-la-spec-html5-the-cool-way/oumar_coach_bonsoir_non.png" alt="oumar_coach_bonsoir_non.png" /></p>
+<p>Car outre le fait que nous pouvons avoir d'autres choses à foutre que passer nos journées à lire une spécification de plusieurs milliers de pages (avec des références croisées à d'autres standard), il s'agissait aussi (surtout ?) de voir comment on pouvait <em>utiliser</em> ces abus : en effet, l'enjeu principal des mutations réside dans le contournement des mécanismes de protection, et ce n'est pas par la <strong>seule</strong> lecture qu'on peut tenter cela.</p>
+<p>Cependant, cependant, cependant... C'est quand même un petit paquet de pages à lire et à comprendre. Donc soyons clair : mon propos n'est pas de rejeter la lecture en tant que telle. Mais de choisir soigneusement les portions à lire pour le but que je me suis fixé.</p>
+<p>En effet, la spécification est connue pour contenir <em>certains</em>  passages qui peuvent occasionner des problèmes et, si d'autres peuvent éventuellement mener à certains comportements étranges, il s'agissait de <em>découvrir</em> la spécification HTML, pas de la maîtriser.</p>
+<p>Et, afin que ce soit encore plus intéressant et motivant, de le faire avec une cible. En PHP, il n'y a pas 36 librairies de désinfection. La plus connue est sans conteste <code>html sanitizer</code> de Symfony. Ce fut donc, dans un premier temps, la matière sur laquelle j'ai travaillé.</p>
+<p>On le verra plus tard, mais cette façon de présenter est un peu trompeuse : cet apprentissage démarré mi-février a en fait constamment dérivé vers plusieurs sujets, et ces sujets en eux-mêmes dépassent le cadre de la "simple" recherche de mutation (qui est tout sauf triviale).</p>
+<p>Je vais donc tenter d'aborder ces différents aspects tout du long de ces X articles. Cela concernera aussi bien l'outillage que la méthodologie ou encore l'utilisation de la dite "Intelligence Artificielle" dans le cadre d'une recherche à visée pédagogique.</p>
+<p>Le but est de présenter cette exploration, des outils, des pistes de réflexion, le tout de la façon la plus pédagogique qu'il soit afin qu'éventuellement ce puisse être utile pour d'autres personnes.</p>
+<p><img src="https://kibatche.github.io/explorer-la-spec-html5-the-cool-way/let&#x27;s_go.png" alt="let&#39;s go!" /></p>
+<h1 id="partie-i-un-peu-de-theorie">Partie I : Un peu de théorie</h1>
+<p>Si lire la spécification dans son entier n'est pas forcément une bonne idée, il n'en reste pas moins que sans idée du contenu de cette spécification, de la façon dont elle oriente les implémentations, on sera bien embêté pour comprendre quoique ce soit aux mutations. Le but de ces articles étant d'être les plus pédagogiques possible, nous allons tout d'abord voir ce que contient la fameuse spécification HTML, évidemment de façon superficielle, et quelles sont les zones d'intérêt de cette dernière.</p>
+<h2 id="c-est-quoi-html5">C'est quoi "HTML5"</h2>
+<p>Une réponse rapide serait : la suite de HTML4. Mais une réponse qui se rapprocherait plus de la vérité serait : une tentative de mettre un peu d'ordre dans le bazar incroyable que pouvait être les technologies utilisées sur le web au début des années 2000.</p>
+<p>Plutôt que HTML5, le comité whatwg parle tout simplement de HTML. L'absence de version dénote la volonté d'unifier les règles qui régissent le langage, héritier de plusieurs technologies : le <code>HTML4</code>, le <code>XHTML1</code> - qui se base sur la syntaxe <code>XML</code> - ainsi que <code>DOM2</code> (<em>DOM</em> pour <em><strong>D</strong>ocument <strong>O</strong>bject <strong>M</strong>odel</em>).</p>
+<p>Il s'agit d'une spécification qu'on peut arbitrairement séparer en trois grandes parties :</p>
+<ol>
+<li>
+<p><strong>Une Partie qui concerne les différentes définitions d'éléments et concepts de HTML :</strong></p>
+<ul>
+<li><a rel="external" href="https://html.spec.whatwg.org/multipage/infrastructure.html#infrastructure">L'infrastructure commune</a>: cette section détermine la base commune à toute la spécification (les unités informatiques utilisées, la nomenclature etc.)</li>
+<li>[La sémantique, la structure ainsi que les différentes API d'un Document HTML](<a rel="external" href="https://html.spec.whatwg.org/multipage/dom.html#dom">Semantics, structure, and APIs of HTML documents</a>: cette section détermine par exemple l'objet <code>Document</code>, ainsi que tout ce qui concerne l'implémentation des différents éléments du HTML par le biais notamment d'<strong>interfaces</strong>, ainsi que les attributs globaux des éléments HTML, ou encore différentes propriétés.</li>
+<li><a rel="external" href="https://html.spec.whatwg.org/multipage/semantics.html#semantics">Les éléments du HTML</a>: c'est ce que tout le monde connaît, la définition de l'ensemble des éléments disponibles en HTML, comme la balise <code>a</code> ou encore <code>script</code>, le tout regroupé par typologie. On a ainsi des éléments typés comme des éléments de métadonnées (<code>meta</code> par exemple), des <code>section</code> etc.</li>
+<li>[Les microdonnées](<a rel="external" href="https://html.spec.whatwg.org/multipage/microdata.html#microdata">Microdata</a>: Définition d'un certains type de métadonnées utilisé au sein des documents</li>
+</ul>
+</li>
+<li>
+<p><strong>Une partie qui concerne principalement l'implémentation programmatique de fonctionnalités HTML :</strong></p>
+<ul>
+<li><a rel="external" href="https://html.spec.whatwg.org/multipage/interaction.html#editing">Les interactions utilisateurs</a>: Détermine certains attributs qui peuvent ou non déclencher des événements après interactions, permettent de rendre visibles ou non certains éléments auprès des utilisateurs etc. et les différentes interfaces de programmation afférentes.</li>
+<li><a rel="external" href="https://html.spec.whatwg.org/multipage/browsers.html#browsers">Le chargement des pages web</a>: Détermine l'objet <code>Window</code>, ainsi que les interfaces<code>Location</code> ou encore <code>History</code> parmi d'autres. C'est une section qui aborde également la notion d'origine en HTML - <em>origin</em> - qui est centrale dans la sécurité informatique liée aux applications web.</li>
+<li><a rel="external" href="https://html.spec.whatwg.org/multipage/webappapis.html#webappapis">API des applications Web</a>: Détermine de nombreuses choses comme la façon dont les scripts sont exécutés dans le contexte d'un document, l'insertion dynamique de balise, et surtout <strong>l'interface de <em>parsing</em> du DOM ainsi que sa sérialisation via l'API <code>DOMParser</code></strong>.</li>
+<li><a rel="external" href="https://html.spec.whatwg.org/multipage/comms.html#comms">La communication</a>: Détermine l'interface <code>MessageEvent</code> utilisée dans différentes façon de communiquer (au sein d'un document, entre document etc.)</li>
+<li><a rel="external" href="https://html.spec.whatwg.org/multipage/workers.html#workers">Les Web workers</a>: Détermine les différentes interfaces liées aux workers web, qui permettent d'exécuter du javascript en tâche de fond.</li>
+<li><a rel="external" href="https://html.spec.whatwg.org/multipage/webstorage.html#webstorage">Le Web storage</a>: Détermine les différentes interfaces liées au Web storage qui sert à stocker des données de type clé/valeur au sein du navigateur.</li>
+</ul>
+</li>
+<li>
+<p><strong>Une partie qui concerne le parsing (donc l'analyse et le traitement syntaxique) de HTML ainsi que le rendu de HTML :</strong></p>
+<ul>
+<li><a rel="external" href="https://html.spec.whatwg.org/multipage/syntax.html#syntax">La syntaxe HTML</a>: Détermine les règles d'écriture du HTML, la façon dont un agent utilisateur doit la traiter, les règles d'interactions entre les éléments etc. <strong>Elle présente concrètement une machine état pour la construction de l'arbre HTML (le DOM). C'est la section qui nous intéresse le plus</strong>.</li>
+<li><a rel="external" href="https://html.spec.whatwg.org/multipage/xhtml.html#the-xhtml-syntax">La syntaxe XML</a>: Détermine la façon dont un document HTML peut intégrer du XML. En effet, les deux peuvent se mélanger, comme on le verra plus tard dans ces articles. Lien : <a rel="external" href="https://www.w3.org/TR/xml/">Spécification du XML</a>.</li>
+<li><a rel="external" href="https://html.spec.whatwg.org/multipage/rendering.html#rendering">Le Rendu</a>: Détermine la façon dont un document HTML peut intégrer du CSS. Il existe un <a rel="external" href="https://drafts.csswg.org/css2/"><em>draft</em> de spécification CSS</a>.</li>
+</ul>
+</li>
+</ol>
+<p>Pour terminer, il y a la section <a rel="external" href="https://html.spec.whatwg.org/multipage/obsolete.html#obsolete">Obsolete features</a> qui présente les fonctionnalités obsolètes, ainsi que diverses considérations qui ne nous intéressent pas.</p>
+<p>La section la plus intéressante pour nous est donc celle qui concerne la syntaxe du HTML, et notamment le parsing.</p>
+<h2 id="le-parsing-html">Le parsing HTML</h2>
+<p>Comme exposé plus haut, la section <code>Syntaxe HTML</code> est celle qui permet aux agents utilisateur d'implémenter la construction de l'arbre, et de rendre ce dernier sous la forme d'un objet : le <strong>DOM</strong>.</p>
+<p>Pour faire simple, on peut voir le processus de parsing comme suit :</p>
+<p><img src="https://kibatche.github.io/explorer-la-spec-html5-the-cool-way/schema_parsing.png" alt="Schéma du parsing" /></p>
+<p>Nous n'allons pas détailler l'ensemble de ces processus, mais plutôt aborder certains détails de ces processus. Ce n'est pas idéal car il y aura forcément des raccourcis, mais le but est de s'armer théoriquement pour tester des mutations, pas de faire notre propre navigateur.</p>
+<blockquote class="markdown-alert-note">
+<p>Nous utiliserons massivement l'outil <a rel="external" href="https://yeswehack.github.io/Dom-Explorer/#eyJpbnB1dCI6IiIsInBpcGVsaW5lcyI6W3siaWQiOiJ2MzFtYjJ2YyIsIm5hbWUiOiJEb20gVHJlZSIsInBpcGVzIjpbeyJuYW1lIjoiRG9tUGFyc2VyIiwiaWQiOiI3YzNzZmlhayIsImhpZGUiOmZhbHNlLCJza2lwIjpmYWxzZSwib3B0cyI6eyJ0eXBlIjoidGV4dC9odG1sIiwic2VsZWN0b3IiOiJib2R5Iiwib3V0cHV0IjoiaW5uZXJIVE1MIiwiYWRkRG9jdHlwZSI6dHJ1ZX19XX1dfQ==">Dom-Explorer</a> pour illustrer nos propos comme ci-dessous et tester différentes choses.
+Il s'agit d'une excellentissime application qui permet d'illustrer l'arbre HTML résultant d'une entrée utilisateur avec certains attributs utiles lors de l'exploration des mutations.
+Nous reviendrons sur cet outil plus en détail lors de l'article concernant la méthodologie et les outils, disponible ici [METTRE LIEN ARTICLE QUAND TERMINE].</p>
+</blockquote>
+<h3 id="le-flux-d-octets"><strong>Le flux d'octets</strong></h3>
+<p>Correspond aux octets bruts. Le parseur doit déterminer le jeu de caractères (<code>utf-8</code>, <code>utf-16[le/be]</code> etc). L'encodage permet de déterminer ce "qu'est" un octet ou une suite d'octets.</p>
+<p>Par exemple, prenons le deux octets suivants : <code>\x3c\x00</code>. Selon que l'encodage soit en <code>utf-8</code> ou en <code>utf-16le</code>, la résultat est sensiblement différent. Tous deux donneront le caractère <code>&lt;</code>, mais dans le cadre de l'<code>utf-8</code> ce résultat est calculé à partir de 1 seul octet - <code>\x3c</code> - tandis que pour l'<code>utf-16le</code>, c'est sur <strong>deux octets</strong>. Ainsi dans le cadre de l'<code>utf8</code>, le second octet <code>\x00</code> sera vu comme un octet à part entière.</p>
+<blockquote class="markdown-alert-note">
+<p>L'<code>utf-16[be/le]</code> est cependant un cas particulier concernant les caractères ASCII (de 0 à 127) : c'est l'un des seuls jeux de caractères autorisés (avec l'<code>utf-32</code>) dont la plage ASCII est encodée différemment (sur deux octets au lieu d'un seul, quatre octets pour l'<code>utf-32</code>).</p>
+</blockquote>
+<p>Mais comment le parseur détermine-t-il le jeu de caractères à appliquer au flux d'octets ?</p>
+<p>Ceci est déterminé dans la section suivante : <a rel="external" href="https://html.spec.whatwg.org/multipage/parsing.html#determining-the-character-encoding">Déterminer l'encodage des caractères</a>.</p>
+<p>Synthétiquement, l'algorithme proposé possède trois niveaux de certitude : <code>tentative</code>, <code>certain</code>, ou <code>irrelevant</code>.</p>
+<p>Ces niveaux de certitude sont déterminés à partir des différentes sources d'informations :</p>
+<ol>
+<li>Le <code>BOM</code> pour <em>Byte Order Mark</em>, est une suite d'octets situés à l'index 0 du flux de caractères.</li>
+</ol>
+<table><thead><tr><th>BOM</th><th>Encodage</th><th><strong>Encodage final</strong></th></tr></thead><tbody>
+<tr><td>0xEF 0xBB 0xBF</td><td><a rel="external" href="https://encoding.spec.whatwg.org/#utf-8">UTF-8</a></td><td><code>utf-8</code></td></tr>
+<tr><td>0xFE 0xFF</td><td><a rel="external" href="https://encoding.spec.whatwg.org/#utf-16be">UTF-16BE</a></td><td><code>utf-8</code></td></tr>
+<tr><td>0xFF 0xFE</td><td><a rel="external" href="https://encoding.spec.whatwg.org/#utf-16le">UTF-16LE</a></td><td><code>utf-8</code></td></tr>
+</tbody></table>
+<ol start="2">
+<li>Une préférence utilisateur (<a rel="external" href="https://encoding.spec.whatwg.org/#x-user-defined"><code>x-user-define</code></a>) : selon le standard, l'encodage sera - de toutes façons - <a rel="external" href="https://encoding.spec.whatwg.org/#windows-1252">windows-1252</a></li>
+<li>Les 1024 premiers octets ou le nombre d'octets lus dans un laps de temps de 500ms. Ceci soit dans une pré-analyse du flux, soit lors de la lecture d'un des éléments suivant de cette liste. Cela permet notamment de déterminer le jeu de caractère à l'aide de l'élément <code>meta</code> avec l'attribut <code>charset</code>.</li>
+<li>L'en-tête HTTP <code>Content-type</code></li>
+<li>L'encodage du parent du <code>Document</code> actuellement parsé</li>
+<li>L'historique lié à la page (<em>ie.</em>, si le site a été visité auparavant, on peut prendre l'encodage déterminé pour lui comme encodage pour le document courant)</li>
+<li>Auto-détection, autre façon de déterminer l'encodage, par exemple <em>via</em> la localisation de la page</li>
+<li>Une valeur par défaut déterminée par l'implémentation. C'est l'<code>utf-8</code> qui est fortement suggéré.</li>
+</ol>
+<p>Une fois le jeu de caractère déterminé, le décodeur avec les options idoines est utilisé pour interpréter les caractères présents.</p>
+<p>Il est à noter que les jeux de caractères disponibles sont limités à une liste précise, parmi lesquels : <a rel="external" href="https://encoding.spec.whatwg.org/#utf-8">UTF-8</a>, <a rel="external" href="https://encoding.spec.whatwg.org/#iso-8859-2">ISO-8859-2</a>, <a rel="external" href="https://encoding.spec.whatwg.org/#iso-8859-7">ISO-8859-7</a>, <a rel="external" href="https://encoding.spec.whatwg.org/#iso-8859-8">ISO-8859-8</a>, <a rel="external" href="https://encoding.spec.whatwg.org/#windows-874">windows-874</a>, <a rel="external" href="https://encoding.spec.whatwg.org/#windows-1250">windows-1250</a>, <a rel="external" href="https://encoding.spec.whatwg.org/#windows-1251">windows-1251</a>, <a rel="external" href="https://encoding.spec.whatwg.org/#windows-1252">windows-1252</a>, <a rel="external" href="https://encoding.spec.whatwg.org/#windows-1254">windows-1254</a>, <a rel="external" href="https://encoding.spec.whatwg.org/#windows-1255">windows-1255</a>, <a rel="external" href="https://encoding.spec.whatwg.org/#windows-1256">windows-1256</a>, <a rel="external" href="https://encoding.spec.whatwg.org/#windows-1257">windows-1257</a>, <a rel="external" href="https://encoding.spec.whatwg.org/#windows-1258">windows-1258</a>, <a rel="external" href="https://encoding.spec.whatwg.org/#gbk">GBK</a>, <a rel="external" href="https://encoding.spec.whatwg.org/#big5">Big5</a>, <a rel="external" href="https://encoding.spec.whatwg.org/#iso-2022-jp">ISO-2022-JP</a>, <a rel="external" href="https://encoding.spec.whatwg.org/#shift_jis">Shift_JIS</a>, <a rel="external" href="https://encoding.spec.whatwg.org/#euc-kr">EUC-KR</a>, <a rel="external" href="https://encoding.spec.whatwg.org/#utf-16be">UTF-16BE</a>, <a rel="external" href="https://encoding.spec.whatwg.org/#utf-16le">UTF-16LE</a>, <a rel="external" href="https://encoding.spec.whatwg.org/#utf-16be-le">UTF-16BE/LE</a>, et <a rel="external" href="https://encoding.spec.whatwg.org/#x-user-defined">x-user-defined</a>.</p>
+<h3 id="la-tokenisation-et-la-construction-de-l-arbre-explications-rapides">La tokenisation et la construction de l'arbre : explications rapides</h3>
+<p>C'est lors des étapes de tokenisation et de construction que commence véritablement le travail.</p>
+<p>Pour simplifier, le tokeniseur va émettre des tokens qui seront consommés par l'étape de construction de l'arbre. Ainsi, les deux opérations coexistent, chaque token émis devant être immédiatement consommé par l'étape de construction (c'est moi qui souligne) :</p>
+<blockquote>
+<p><strong>When a token is emitted, it must immediately be handled by the <a rel="external" href="https://html.spec.whatwg.org/multipage/parsing.html#tree-construction">tree construction</a> stage.</strong> The tree construction stage can affect the state of the tokenization stage, and can insert additional characters into the stream. [...]</p>
+</blockquote>
+<p>En somme, nous avons un jeu de deux programmes dont les influences sont bi-directionnelles. Les influences sont en l'espèce des variables tenues à jour par l'agent utilisateur. Nous les verrons un peu plus loin.</p>
+<ul>
+<li><strong>Le tokeniseur</strong></li>
+</ul>
+<p>C'est essentiellement une machine à états qui va consommer des caractères. Pour rappel, ces caractères sont déjà encodés lors de l'étape que nous avons décrite précédemment. Les états peuvent être influencés par le mode d'insertion (<a rel="external" href="https://html.spec.whatwg.org/multipage/parsing.html#insertion-mode"><em>insertion mode</em></a>) ainsi que la "Pile des éléments ouverts" (<a rel="external" href="https://html.spec.whatwg.org/multipage/parsing.html#the-stack-of-open-elements"><em>stack of open elements</em></a>) et d'autres choses.</p>
+<p>Le tokeniseur retourne donc des tokens. Ces tokens sont catégorisés par type : <code>DOCTYPE</code>, <code>start tag</code>, <code>end tag</code>, <code>comment</code>, <code>character</code>, <code>end-of-file</code>.</p>
+<ul>
+<li><strong>Le constructeur</strong></li>
+</ul>
+<p>L'étape de construction quant à elle consomme les tokens émis par l'étape de tokénisation.</p>
+<p>La construction est non seulement influencée par le mode d'insertion, c'est même la principale variable utilisée, mais également par la liste des éléments de formatage actifs, l'état dans lequel on se trouve et tout un tas de choses qu'il serait trop long de parcourir et expliquer.</p>
+<p>Ceci étant dit, le constructeur consomme certes des tokens, mais ce qui en résulte  c'est le DOM, auquel est rattaché un objet nommé <code>Document</code>, créé lors de l'instanciation du parseur.</p>
+<p>Ce DOM est constitué de nœuds (<em>node</em>) reliés ensemble. Ces nœuds ont diverses propriétés, et ces propriétés peuvent changer "en cours de route".</p>
+<p>Ainsi un nœud qui pouvait avoir à un instant T telle ou telle propriété peut, suite à une opération donnée, en posséder de nouvelles, en être dépossédée d'autres etc. Autre chose, un nœud qui pouvait être relié à un autre peut également ne plus l'être suite à telle ou telle opération.</p>
+<p>En somme, c'est ici que se trouve la nature dynamique du DOM.</p>
+<h3 id="presentations-de-quelques-variables-utilisees-par-les-agents-utilisateurs">Présentations de quelques variables utilisées par les agents utilisateurs</h3>
+<p>Nous allons voir les 5 variables utiles pour notre affaire : états, modes d'insertion, pile des éléments ouverts et liste des éléments de formatage actifs.</p>
+<ul>
+<li><a rel="external" href="https://html.spec.whatwg.org/multipage/parsing.html#tokenization"><strong>Les États :</strong></a></li>
+</ul>
+<p>Il y a de très nombreux états. Parmi eux, on peut trouver le <em>Data State</em>, qui est l'état initial, le <em>RAWTEXT state</em> etc. Les états permettent au programme de tokenisation de consommer un token (en général un caractère) selon les règles dudit état et du résultat des opérations menées au sein de cet état.</p>
+<ul>
+<li><a rel="external" href="https://html.spec.whatwg.org/multipage/parsing.html#insertion-mode"><strong>Les Modes d'insertion :</strong></a></li>
+</ul>
+<p>Les modes d'insertion servent à contrôler la construction de l'arbre.</p>
+<p>Il y a également de très nombreux modes. Le mode d'insertion initial est tout simplement <em>initial</em>. On trouve également le mode d'insertion <a rel="external" href="https://html.spec.whatwg.org/multipage/parsing.html#parsing-main-inbody"><em>in body</em></a>, <a rel="external" href="https://html.spec.whatwg.org/multipage/parsing.html#parsing-main-intable"><em>in table</em></a> et l'un des plus intéressants concernant notre cas, le mode d'insertion <a rel="external" href="https://html.spec.whatwg.org/multipage/parsing.html#parsing-main-inforeign"><em>in foreign content</em></a>. Nous reviendrons sur ce dernier mode d'insertion en détail ici [INSERER SECTION CORRESPONDANTE].</p>
+<ul>
+<li><a rel="external" href="https://html.spec.whatwg.org/multipage/parsing.html#the-stack-of-open-elements"><strong>La pile des éléments ouverts :</strong></a></li>
+</ul>
+<p>C'est une pile où sont entreposés les éléments dit "ouverts", c'est à dire n'étant pas encore fermés... Belle lapalissade afin de signifier que cette pile est en quelque sorte un registre temporaire du DOM en cours de construction, dont les différents éléments à des instants T vont être poussés sur la pile, ou dépilés, selon des règles déterminées par l'état de la machine à états et bien sûr selon le mode d'insertion.</p>
+<p>Mais pas seulement ! En sus de cela, les éléments eux-même ont des règles qui leur sont propres (cf. lien ci-dessus), ce qui rend le traitement des différents éléments particulièrement complexe. Parfois, on peut se demander si l'exception ne serait la norme dans ce standard :D .</p>
+<p><img src="https://kibatche.github.io/explorer-la-spec-html5-the-cool-way/special_html.png" alt="comportement spéciaux html" /></p>
+<p>Le premier élément de la pile des éléments ouverts sera <strong>toujours</strong> l'élément <code>html</code>, et ne sera dépilé qu'une fois le parsing terminé.</p>
+<ul>
+<li><strong><a rel="external" href="https://html.spec.whatwg.org/multipage/parsing.html#the-list-of-active-formatting-elements">Liste des éléments de formatage actifs :</a></strong></li>
+</ul>
+<blockquote class="markdown-alert-warning">
+<p>Cette section est particulièrement difficile à comprendre je trouve. Aussi je prends des raccourcis, et il est fort possible que des erreurs s'y trouvent malgré mes efforts.</p>
+</blockquote>
+<p>Cette liste permet de prendre en charge les éléments qui sont mal imbriqués entre-eux <em>en les reconstruisant</em>. En effet, le standard HTML actuel - à la différence du XML - tolère des erreurs dans son écriture.</p>
+<p>Les éléments de formatage sont dans cette liste : <a rel="external" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element">a</a>, <a rel="external" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-b-element">b</a>, <a rel="external" href="https://html.spec.whatwg.org/multipage/obsolete.html#big">big</a>, <a rel="external" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-code-element">code</a>, <a rel="external" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-em-element">em</a>, <a rel="external" href="https://html.spec.whatwg.org/multipage/obsolete.html#font">font</a>, <a rel="external" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-i-element">i</a>, <a rel="external" href="https://html.spec.whatwg.org/multipage/obsolete.html#nobr">nobr</a>, <a rel="external" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-s-element">s</a>, <a rel="external" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-small-element">small</a>, <a rel="external" href="https://html.spec.whatwg.org/multipage/obsolete.html#strike">strike</a>, <a rel="external" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-strong-element">strong</a>, <a rel="external" href="https://html.spec.whatwg.org/multipage/obsolete.html#tt">tt</a>, et <a rel="external" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-u-element">u</a>.</p>
+<p>Il y a également ce que whawg nomme des "marqueurs" (<em>markers</em>), c'est à dire une liste d'éléments qui permettent de "bloquer" à un nœud l'opération de reconstruction ou de réagencement. Ou dit autrement, à leur manière, cela permet d'empêcher la "fuite" de certains éléments en dehors de ces marqueurs (par exemple la fuite en dehors d'un élément <code>template</code>), faisant de ces derniers la "racine" à partir de laquelle les opérations induites peuvent être menée.</p>
+<p>Règle supplémentaire, il ne peut y avoir plus trois éléments identiques de formatage après un marqueur donné. Par identique, il faut entendre : même nom d'élément, même attributs, même namespace.</p>
+<p>Je dois avouer que je trouve ce passage particulièrement ardu. Comme pour l'ensemble de ces articles, il faut prendre ce que j'écris avec des pincettes.</p>
+<p>La liste des éléments de formatage actif semble être utile pour au moins deux opérations, comme nous l'avons évoqué dans les paragraphes précédents :</p>
+<ul>
+<li>Un algorithme de réagencement du HTML nommé <a rel="external" href="https://html.spec.whatwg.org/multipage/parsing.html#adoptionAgency"><em>Adoption Agency Algorithm</em></a> (AAA à partir de maintenant)</li>
+<li>Un algorithme de reconstruction du HTML, détaillé au sein de la section <a rel="external" href="https://html.spec.whatwg.org/multipage/parsing.html#the-list-of-active-formatting-elements"><em>Liste des éléments de formatage actifs</em></a></li>
+</ul>
+<p>Pour mieux saisir ce que c'est exactement, prenons l'exemple mis en avant par whatwg.</p>
+<p>Le HTML suivant est mal formé :</p>
+<pre class="giallo" style="color: #CAD3F5; background-color: #24273A;"><code data-lang="html"><span class="giallo-l"><span style="color: #8BD5CA;">&lt;</span><span style="color: #8AADF4;">p</span><span style="color: #8BD5CA;">&gt;</span><span>1</span><span style="color: #8BD5CA;">&lt;</span><span style="color: #8AADF4;">b</span><span style="color: #8BD5CA;">&gt;</span><span>2</span><span style="color: #8BD5CA;">&lt;</span><span style="color: #8AADF4;">i</span><span style="color: #8BD5CA;">&gt;</span><span>3</span><span style="color: #8BD5CA;">&lt;/</span><span style="color: #8AADF4;">b</span><span style="color: #8BD5CA;">&gt;</span><span>4</span><span style="color: #8BD5CA;">&lt;/</span><span style="color: #8AADF4;">i</span><span style="color: #8BD5CA;">&gt;</span><span>5</span><span style="color: #8BD5CA;">&lt;/</span><span style="color: #8AADF4;">p</span><span style="color: #8BD5CA;">&gt;</span></span></code></pre>
+<p>On voit que l'élément <code>b</code> est fermé avant l'élément <code>i</code> qui se trouve pourtant après <code>b</code>.</p>
+<p>À ce moment nous avons :</p>
+<table><thead><tr><th>Pile des éléments ouverts</th><th>Liste des éléments de formatage actifs</th></tr></thead><tbody>
+<tr><td><code>html</code>, <code>body</code>, <code>p</code>, <code>b</code>, <code>i</code></td><td><code>b</code>, <code>i</code></td></tr>
+</tbody></table>
+<p>L'agent utilisateur va donc reconstruire un arbre valide, qui deviendra <em>in fine</em> :</p>
+<iframe
+    sandbox="allow-scripts allow-modals allow-popups allow-same-origin"
+    src="https://yeswehack.github.io/Dom-Explorer/frame?input=editable&amp;titleBar=readonly&amp;readonly=true&amp;pipe[titleBar]=true&amp;pipe[settings]=true&amp;pipe[render]=true&amp;pipe[skip]=true##eyJpbnB1dCI6IjxwPjE8Yj4yPGk+MzwvYj40PC9pPjU8L3A+IiwicGlwZWxpbmVzIjpbeyJpZCI6Im1pNjI1OWZxIiwibmFtZSI6IkRvbSBUcmVlIiwicGlwZXMiOlt7Im5hbWUiOiJEb21QYXJzZXIiLCJpZCI6ImcwMXF0ZjlqIiwiaGlkZSI6ZmFsc2UsInNraXAiOmZhbHNlLCJvcHRzIjp7InR5cGUiOiJ0ZXh0L2h0bWwiLCJzZWxlY3RvciI6ImJvZHkiLCJvdXRwdXQiOiJpbm5lckhUTUwiLCJhZGREb2N0eXBlIjp0cnVlfX1dfV19"
+    width="100%"
+    height="500">
+</iframe>
+<p><strong>Un nouvel élément <code>i</code> a été créé !!</strong></p>
+<p>Est-ce de la magie ?</p>
+<p><img src="https://kibatche.github.io/explorer-la-spec-html5-the-cool-way/marabout.png" alt="marabout" /></p>
+<p>Malheureusement, non.</p>
+<p>Pour comprendre, nous devons prendre en compte 4 choses :</p>
+<ul>
+<li><strong>Le flux de tokens</strong> et la tête de lecture s'y référant (en somme, l'élément qui est lu à un instant T)</li>
+<li><strong>Les listes des éléments ouverts</strong> et <strong>des éléments de formatage actifs</strong></li>
+<li><strong>Le DOM</strong>, l'arbre résultant des diverses opérations.</li>
+</ul>
+<ol>
+<li>Jusqu'à l'élément de texte <code>3</code>, les éléments sus-mentionnés ont les valeurs suivantes :</li>
+</ol>
+<p><strong>Flux de tokens &amp; DOM Résultant</strong></p>
+<iframe
+    sandbox="allow-scripts allow-modals allow-popups allow-same-origin"
+    src="https://yeswehack.github.io/Dom-Explorer/frame?input=editable&amp;titleBar=readonly&amp;readonly=true&amp;pipe[titleBar]=true&amp;pipe[settings]=true&amp;pipe[render]=true&amp;pipe[skip]=true#eyJpbnB1dCI6IjxwPjE8Yj4yPGk+MyIsInBpcGVsaW5lcyI6W3siaWQiOiJtaTYyNTlmcSIsIm5hbWUiOiJEb20gVHJlZSIsInBpcGVzIjpbeyJuYW1lIjoiRG9tUGFyc2VyIiwiaWQiOiJnMDFxdGY5aiIsImhpZGUiOmZhbHNlLCJza2lwIjpmYWxzZSwib3B0cyI6eyJ0eXBlIjoidGV4dC9odG1sIiwic2VsZWN0b3IiOiJib2R5Iiwib3V0cHV0IjoiaW5uZXJIVE1MIiwiYWRkRG9jdHlwZSI6dHJ1ZX19XX1dfQ=="
+    width="100%"
+    height="500">
+</iframe>
+<table><thead><tr><th>Pile des éléments ouverts</th><th>Liste des éléments de formatage actifs</th></tr></thead><tbody>
+<tr><td><code>html</code>, <code>body</code>, <code>p</code>, <code>b</code>, <code>i</code></td><td><code>b</code>, <code>i</code></td></tr>
+</tbody></table>
+<ol start="2">
+<li>Mais lorsque le parseur arrive à l'élément <code>&lt;/b&gt;</code>, l'AAA est invoqué :</li>
+</ol>
+<blockquote class="markdown-alert-note">
+<p>Je vais être honnête : j'ai du mal à le comprendre. Afin de mieux le saisir, il faudrait que  j'implémente cette portion de la spécification au sein d'un programme, mais j'hésite entre :</p>
+<p><img src="https://kibatche.github.io/explorer-la-spec-html5-the-cool-way/flemme.png" alt="flemme" /></p>
+<p>Nous nous contenterons donc du résultat de cet algo.</p>
+</blockquote>
+<p><strong>Flux de tokens &amp; DOM résultant</strong></p>
+<iframe
+    sandbox="allow-scripts allow-modals allow-popups allow-same-origin"
+    src="https://yeswehack.github.io/Dom-Explorer/frame?input=editable&amp;titleBar=readonly&amp;readonly=true&amp;pipe[titleBar]=true&amp;pipe[settings]=true&amp;pipe[render]=true&amp;pipe[skip]=true#eyJpbnB1dCI6IjxwPjE8Yj4yPGk+MzwvYj4iLCJwaXBlbGluZXMiOlt7ImlkIjoibWk2MjU5ZnEiLCJuYW1lIjoiRG9tIFRyZWUiLCJwaXBlcyI6W3sibmFtZSI6IkRvbVBhcnNlciIsImlkIjoiZzAxcXRmOWoiLCJoaWRlIjpmYWxzZSwic2tpcCI6ZmFsc2UsIm9wdHMiOnsidHlwZSI6InRleHQvaHRtbCIsInNlbGVjdG9yIjoiYm9keSIsIm91dHB1dCI6ImlubmVySFRNTCIsImFkZERvY3R5cGUiOnRydWV9fV19XX0="
+    width="100%"
+    height="500">
+</iframe>
+<table><thead><tr><th>Pile des éléments ouverts</th><th>Liste des éléments de formatage actifs</th></tr></thead><tbody>
+<tr><td><code>html</code>, <code>body</code>, <code>p</code></td><td><code>i</code></td></tr>
+</tbody></table>
+<p>On constate que la structure du DOM est inchangée mais que la liste des éléments de formatage actifs  contient désormais <code>i</code> seulement et que la pile des éléments ouverts ne possède plus que <code>html</code>, <code>body</code> et <code>p</code>. L'AAA a donc retiré ces éléments de cette pile, ils sont donc maintenant fermés.</p>
+<ol start="3">
+<li>On consomme le token suivant qui est l'élément de texte <code>4</code> :</li>
+</ol>
+<p>Cet élément de texte va déclencher l'algorithme de reconstruction de l'élément de formatage actif <code>i</code> décrit dans la section que nous sommes en train d'étudier.</p>
+<p>Cet algorithme <strong>permet de créer un nouvel élément équivalent à un élément de la liste des éléments de formatage actifs si</strong> (dans notre cas):</p>
+<ul>
+<li>La liste des éléments de formatage actifs n'est pas vide</li>
+<li>L'élément traité par l'algorithme n'est pas un marqueur (comme <code>template</code>) et n'est pas dans la pile des éléments ouverts</li>
+<li>Il n'a pas d'élément avant lui dans la liste des éléments de formatage actifs, auquel cas d'autres opérations sont menées.</li>
+</ul>
+<p><strong>Flux de tokens &amp; DOM résultant</strong></p>
+<iframe
+    sandbox="allow-scripts allow-modals allow-popups allow-same-origin"
+    src="https://yeswehack.github.io/Dom-Explorer/frame?input=editable&amp;titleBar=readonly&amp;readonly=true&amp;pipe[titleBar]=true&amp;pipe[settings]=true&amp;pipe[render]=true&amp;pipe[skip]=true#eyJpbnB1dCI6IjxwPjE8Yj4yPGk+MzwvYj40IiwicGlwZWxpbmVzIjpbeyJpZCI6Im1pNjI1OWZxIiwibmFtZSI6IkRvbSBUcmVlIiwicGlwZXMiOlt7Im5hbWUiOiJEb21QYXJzZXIiLCJpZCI6ImcwMXF0ZjlqIiwiaGlkZSI6ZmFsc2UsInNraXAiOmZhbHNlLCJvcHRzIjp7InR5cGUiOiJ0ZXh0L2h0bWwiLCJzZWxlY3RvciI6ImJvZHkiLCJvdXRwdXQiOiJpbm5lckhUTUwiLCJhZGREb2N0eXBlIjp0cnVlfX1dfV19"
+    width="100%"
+    height="500">
+</iframe>
+<p>On constate qu'un nouvel élément <code>i</code> identique a été créé.</p>
+<ol start="4">
+<li><em>In fine</em>, après avoir traité le reste des tokens :</li>
+</ol>
+<p><strong>Flux de tokens &amp; DOM résultant</strong></p>
+<iframe
+    sandbox="allow-scripts allow-modals allow-popups allow-same-origin"
+    src="https://yeswehack.github.io/Dom-Explorer/frame?input=editable&amp;titleBar=readonly&amp;readonly=true&amp;pipe[titleBar]=true&amp;pipe[settings]=true&amp;pipe[render]=true&amp;pipe[skip]=true##eyJpbnB1dCI6IjxwPjE8Yj4yPGk+MzwvYj40PC9pPjU8L3A+IiwicGlwZWxpbmVzIjpbeyJpZCI6Im1pNjI1OWZxIiwibmFtZSI6IkRvbSBUcmVlIiwicGlwZXMiOlt7Im5hbWUiOiJEb21QYXJzZXIiLCJpZCI6ImcwMXF0ZjlqIiwiaGlkZSI6ZmFsc2UsInNraXAiOmZhbHNlLCJvcHRzIjp7InR5cGUiOiJ0ZXh0L2h0bWwiLCJzZWxlY3RvciI6ImJvZHkiLCJvdXRwdXQiOiJpbm5lckhUTUwiLCJhZGREb2N0eXBlIjp0cnVlfX1dfV19"
+    width="100%"
+    height="500">
+</iframe>
+<p><strong>OUF !!</strong></p>
+<h3 id="les-noeuds">Les nœuds</h3>
+<p>Il me semble important d'aborder rapidement ce qu'est un nœud.</p>
+<p>Le plus simple nœud qu'on puisse trouver dans HTML est du type <a rel="external" href="https://dom.spec.whatwg.org/#node"><code>Node</code></a>.</p>
+<p>D'autres type de nœuds étendent (au sens programmatique) <code>Node</code>. Ils sont déterminés par l'attribut <code>nodeType</code>.</p>
+<p>Il y a 12 <code>nodeType</code>, et parmi eux :</p>
+<ul>
+<li><a rel="external" href="https://dom.spec.whatwg.org/#dom-node-element_node">ELEMENT_NODE</a> = 1;</li>
+<li><a rel="external" href="https://dom.spec.whatwg.org/#dom-node-attribute_node">ATTRIBUTE_NODE</a> = 2;</li>
+<li><a rel="external" href="https://dom.spec.whatwg.org/#dom-node-text_node">TEXT_NODE</a> = 3;</li>
+<li><a rel="external" href="https://dom.spec.whatwg.org/#dom-node-cdata_section_node">CDATA_SECTION_NODE</a> = 4;</li>
+<li><code>ENTITY_REFERENCE_NODE</code> = 5; // legacy</li>
+<li><code>ENTITY_NODE</code> = 6; // legacy</li>
+<li><a rel="external" href="https://dom.spec.whatwg.org/#dom-node-processing_instruction_node">PROCESSING_INSTRUCTION_NODE</a> = 7;</li>
+<li><a rel="external" href="https://dom.spec.whatwg.org/#dom-node-comment_node">COMMENT_NODE</a> = 8;</li>
+<li><a rel="external" href="https://dom.spec.whatwg.org/#dom-node-document_node">DOCUMENT_NODE</a> = 9;</li>
+<li><a rel="external" href="https://dom.spec.whatwg.org/#dom-node-document_type_node">DOCUMENT_TYPE_NODE</a> = 10;</li>
+<li><a rel="external" href="https://dom.spec.whatwg.org/#dom-node-document_fragment_node">DOCUMENT_FRAGMENT_NODE</a> = 11;</li>
+<li><code>NOTATION_NODE</code> = 12; // legacy</li>
+</ul>
+<p>Le type de nœud qui va nous intéresser le plus est celui avec le <code>nodeType</code> 3 : <a rel="external" href="https://dom.spec.whatwg.org/#element"><code>Element</code></a>.</p>
+<p>L'interface <code>Element</code> possède - entre autres - l'attribut suivant : <a rel="external" href="https://dom.spec.whatwg.org/#dom-element-namespaceuri">namespaceURI</a>.</p>
+<p>Le <em>namespace</em>.</p>
+<p>En HTML on a trois namespaces considérés par le standard, <code>HTML</code>, <code>XML</code>, <code>MATHML</code>. Chacun de ces <em>namespaces</em> possède ses propres règles. Le HTML lui a la possibilité <em><strong>d'intégrer</strong></em> les <em>namespaces</em> étrangers que sont le XML et le MATHML.</p>
+<p>Ces règles d'intégration sont déterminées par le fameux mode d'insertion : <a rel="external" href="https://html.spec.whatwg.org/multipage/parsing.html#parsing-main-inforeign"><code>in foreign content</code></a></p>
+<p>Ce sera l'objet du prochain article !</p>
+<p><img src="https://kibatche.github.io/explorer-la-spec-html5-the-cool-way/mais_non.png" alt="Mais non !" /></p>
+
+        </article>
+    </main>
+    <footer class="footer">
+        <address class="socials">
+            <ul>
+                <li>
+                    <a class="social-link" href="https://kibatche.github.io/atom.xml" title="atom feed" aria-label="atom feed">
+                        <svg role="img" aria-label="feed icon">
+                            <use aria-hidden="true" href="https://kibatche.github.io/images/social_icons/atom.svg#icon" />
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a class="social-link" rel="me" href="" title="github" aria-label="github">
+                        <svg role="img" aria-label="github icon">
+                            <use aria-hidden="true" href="https://kibatche.github.io/images/social_icons/github.svg#icon" />
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </address>
+        <p class="copyright">
+            <span>© <time>2026</time> kbtch_</span>
+            <span>Powered by <a rel="external" href="https://www.getzola.org">Zola</a></span>
+            <span>Theme by <a rel="external" href="https://eyalkalderon.com">ebkalderon</a></span>
+        </p>
+    </footer>
+</body>
+
+</html>

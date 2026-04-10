@@ -73,7 +73,7 @@ allowed_domains = [
     { directive = "connect-src", domains = ["'self'", "cloudflareinsights.com"] },
     { directive = "form-action", domains = ["'self'"] },
     { directive = "frame-src", domains = ["'self'", "https://yeswehack.github.io"] },
-    { directive = "img-src", domains = ["'self'", "https://yeswehack.github.io", "data:"] },
+    { directive = "img-src", domains = ["'self'", "https://yeswehack.github.io"] },
     { directive = "script-src", domains = ["'self'", "static.cloudflareinsights.com", "'sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg=='"] },
 ]
 

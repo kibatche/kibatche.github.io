@@ -1,22 +1,34 @@
 {
   "main": {
-    "id": "8a3e7690d7211838",
+    "id": "f68ce89bfacc1dd3",
     "type": "split",
     "children": [
       {
-        "id": "3f4513c906e7a6ff",
+        "id": "7809d88c0a5426f5",
         "type": "tabs",
         "children": [
           {
-            "id": "20a656a5cab38633",
+            "id": "64da46f649a3c7b7",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/2024-02-26-bi0s-ctf-2024-image-gallery-web-unrated.md",
+                "file": "content/explorer_la_spec_html5_the_cool_way/index.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "index"
+            }
+          },
+          {
+            "id": "a0e8a8738045c735",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Nouvel onglet"
             }
           }
         ]
@@ -25,25 +37,28 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "90309448088ebdcb",
+    "id": "66ce80756832a7ef",
     "type": "split",
     "children": [
       {
-        "id": "7c18cc7733594193",
+        "id": "5c68d2124e194ad4",
         "type": "tabs",
         "children": [
           {
-            "id": "b111c89d2f2a54e6",
+            "id": "a449e1095d06ae0d",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
-              }
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Explorateur de fichiers"
             }
           },
           {
-            "id": "ef5ece4757b7dc73",
+            "id": "6179df08dc594d60",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -54,38 +69,42 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Rechercher"
             }
           },
           {
-            "id": "7faa6af4d7a4dd51",
+            "id": "96821fdb45f286c3",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Signets"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 409.5
   },
   "right": {
-    "id": "32b554094d96a1c3",
+    "id": "fab3fd3a35002ea2",
     "type": "split",
     "children": [
       {
-        "id": "6496b1e52475c63e",
+        "id": "b700a1e2c68611f5",
         "type": "tabs",
         "children": [
           {
-            "id": "46eec0ad2d0a5625",
+            "id": "62e329275be407b4",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_posts/2024-02-26-bi0s-ctf-2024-image-gallery-web-unrated.md",
+                "file": "content/articles/test.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -93,40 +112,67 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Rétrolien pour test"
             }
           },
           {
-            "id": "df408c482b2e97fc",
+            "id": "eac352c97c229265",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_posts/2024-02-26-bi0s-ctf-2024-image-gallery-web-unrated.md",
+                "file": "content/articles/test.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "Liens sortants de test"
             }
           },
           {
-            "id": "bdfb766ce0f1f672",
+            "id": "f8b2dd359f817ea8",
             "type": "leaf",
             "state": {
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
-              }
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Mots-clés"
             }
           },
           {
-            "id": "a57058de8448a0cd",
+            "id": "4432a2427117c16f",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Toutes les propriétés"
+            }
+          },
+          {
+            "id": "ba0327428515f4a7",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "_posts/2024-02-26-bi0s-ctf-2024-image-gallery-web-unrated.md"
-              }
+                "file": "content/articles/test.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Plan de test"
             }
           }
         ]
@@ -138,35 +184,43 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "switcher:Ouvrir le sélecteur rapide": false,
+      "graph:Ouvrir la vue graphique": false,
+      "canvas:Créer une nouvelle toile": false,
+      "daily-notes:Ouvrir la note quotidienne": false,
+      "templates:Insérer le modèle": false,
+      "command-palette:Ouvrir la palette de commandes": false,
+      "bases:Créer une nouvelle base": false
     }
   },
-  "active": "20a656a5cab38633",
+  "active": "64da46f649a3c7b7",
   "lastOpenFiles": [
-    "frontmatter.json",
-    "_site/commons/avatar.jpg",
-    "_site/commons",
-    "commons/avatar.jpg",
-    "commons",
-    "_posts/2023-12-11-authority-medium-windows.md",
-    "_posts/2024-02-26-bi0s-ctf-2024-image-gallery-web-unrated.md",
-    "_posts/2023-09-25-decompresser-un-zip-avec-une-extension-differente-pour-les-fichiers.md",
-    "_posts/2023-09-05-monitorstwo-easy-linux.md",
-    "_site/assets/img/posts/image-gallery/20-10-55.png",
-    "assets/img/posts/image-gallery/20-10-55.png",
-    "_site/assets/img/posts/image-gallery/20-09-25.png",
-    "assets/img/posts/image-gallery/20-09-25.png",
-    "_site/assets/img/posts/image-gallery/20-13-51.png",
-    "assets/img/posts/image-gallery/20-13-51.png",
-    "assets/img/posts/image-gallery/Capture d’écran du 2024-02-25 20-09-25.png",
-    "_site/assets/img/posts/image-gallery/Pasted image 20240226131644.png",
-    "_site/assets/img/posts/image-gallery/commons",
-    "_site/assets/img/posts/image-gallery",
-    "assets/img/posts/image-gallery"
+    "public/explorer-la-spec-html5-the-cool-way/let's_go.png",
+    "content/explorer_la_spec_html5_the_cool_way/let's_go.png",
+    "public/explorer-la-spec-html5-the-cool-way/mais_non.png",
+    "public/explorer-la-spec-html5-the-cool-way/special_html.png",
+    "public/explorer-la-spec-html5-the-cool-way/schema_parsing.png",
+    "public/explorer-la-spec-html5-the-cool-way/oumar_coach_bonsoir_non.png",
+    "public/explorer-la-spec-html5-the-cool-way/mot_croisés.png",
+    "public/explorer-la-spec-html5-the-cool-way/marabout.png",
+    "public/explorer-la-spec-html5-the-cool-way/flemme.png",
+    "public/explorer-la-spec-html5-the-cool-way",
+    "content/explorer_la_spec_html5_the_cool_way/mais_non.png",
+    "content/articles/test.md",
+    "content/articles",
+    "public/apprendre-la-spec-html5-the-cool-way/special_html.png",
+    "content/explorer_la_spec_html5_the_cool_way/index.md",
+    "content/_index.md",
+    "content/articles/_index.md",
+    "public/apprendre-la-spec-html5-the-cool-way",
+    "public/js/theme-switcher.js",
+    "public/js/katex.min.js",
+    "public/js/copy-code-to-clipboard.js",
+    "public/js/auto-close-popover-on-resize.js",
+    "public/js",
+    "public/css/katex.min.css",
+    "public/fonts/FiraCode-Regular.woff2",
+    "Schéma.md",
+    "Pasted.md"
   ]
 }

@@ -1,10 +1,14 @@
 :root {
     // Default theme (Terminus)
     &:has(body[data-theme="terminus"]) {
-        --background-color: #211f1a;
-        --text-color: whitesmoke;
-        --accent-color: #E96363;
-        --footnote-color: rgba(255, 255, 255, 0.5);
+        --background-color: #264653;
+        --text-color: #ebdbb2;
+        --accent-color: #bc4749;
+        --h1-color: #723d46;
+        --h2-color: #e26d5c;
+        --h3-color: #e9c46a;
+        --h4-color: #ffe1a8;
+        --footnote-color: rgba(235, 219, 178, 0.6);
     }
 
     // Tokyo Night theme

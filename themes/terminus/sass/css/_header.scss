@@ -23,7 +23,6 @@
         display: block;
         margin-inline-start: 8px;
         width: 100%;
-        background: repeating-linear-gradient(90deg, var(--accent-color), var(--accent-color) 2px, transparent 0, transparent 10px);
     }
 
     a {
@@ -37,7 +36,7 @@
     display: flex;
     align-items: center;
     padding: 5px 10px;
-    background: var(--accent-color);
+    background: #2a9d8f;
     color: var(--background-color);
     font-weight: bold;
     text-decoration: none;

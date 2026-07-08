@@ -40,7 +40,7 @@ copy_button = true
 # Strings delimited by `::` will be split into mobile-responsive HTML spans. If
 # present, the placeholder values `$YEAR` and `$AUTHOR` are templated with the
 # current year and the site author defined in your `config.toml`, respectively.
-copyright = "© $YEAR $AUTHOR :: Powered by [Zola](https://www.getzola.org) :: Theme by [ebkalderon](https://eyalkalderon.com)"
+copyright = "kibatche.github.io"
 
 # favicon = "images/favicon.png"
 # favicon_emoji = "👨‍💻"

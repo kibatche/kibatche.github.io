@@ -1,5 +1,5 @@
 +++
-title = "Explorer la spécification HTML : The cool way"
+title = "Explorer la spécification HTML : The cool way (1/4)"
 date = "2026-03-28"
 template = "page.html"
 +++
@@ -31,7 +31,7 @@ C'est un sujet qui pourrait paraître dépassé : quel est l'intérêt d'explore
 
 D'ailleurs nous, petites mains de la sécurité informatique, ne sommes-nous pas voué.es à disparaître, si crétins sommes nous face à la toute puissance de la Déesse IA, dont les Archanges Claude et GPT sont les représentants les plus féroces (et idiots diront certain.es) ?
 
-![mots-croisés](mot_croisés.png)
+![mots-croisés](content/explorer_la_spec_html5_the_cool_way/mot_croisés.png)
 
 Eh oui... À quoi bon mesdames messieurs, **À QUOI BON** se péter le cerveau ? Pour la gloire ? Pour Sparte ? Pour l'argent ?
 
@@ -47,7 +47,7 @@ Ce n'est pas à proprement parler d'une méthode *Zero to Heroe* mais de mon poi
 
 En un mot comme en cent :
 
-![oumar_coach_bonsoir_non.png](oumar_coach_bonsoir_non.png)
+![oumar_coach_bonsoir_non.png](content/explorer_la_spec_html5_the_cool_way/oumar_coach_bonsoir_non.png)
 
 Car outre le fait que nous pouvons avoir d'autres choses à foutre que passer nos journées à lire une spécification de plusieurs milliers de pages (avec des références croisées à d'autres standard), il s'agissait aussi (surtout ?) de voir comment on pouvait *utiliser* ces abus : en effet, l'enjeu principal des mutations réside dans le contournement des mécanismes de protection, et ce n'est pas par la **seule** lecture qu'on peut tenter cela.
 
@@ -63,7 +63,7 @@ Je vais donc tenter d'aborder ces différents aspects tout du long de ces X arti
 
 Le but est de présenter cette exploration, des outils, des pistes de réflexion, le tout de la façon la plus pédagogique qu'il soit afin qu'éventuellement ce puisse être utile pour d'autres personnes.
 
-![let's go!](let's_go.png)
+![let's go!](content/explorer_la_spec_html5_the_cool_way/let's_go.png)
 
 # Partie I : Un peu de théorie
 
@@ -106,7 +106,7 @@ Comme exposé plus haut, la section `Syntaxe HTML` est celle qui permet aux agen
 
 Pour faire simple, on peut voir le processus de parsing comme suit :
 
-![Schéma du parsing](schema_parsing.png)
+![Schéma du parsing](content/explorer_la_spec_html5_the_cool_way/schema_parsing.png)
 
 Nous n'allons pas détailler l'ensemble de ces processus, mais plutôt aborder certains détails de ces processus. Ce n'est pas idéal car il y aura forcément des raccourcis, mais le but est de s'armer théoriquement pour tester des mutations, pas de faire notre propre navigateur.
 
@@ -176,7 +176,7 @@ La construction est non seulement influencée par le mode d'insertion, c'est mê
 
 Ceci étant dit, le constructeur consomme certes des tokens, mais ce qui en résulte  c'est le DOM, auquel est rattaché un objet nommé `Document`, créé lors de l'instanciation du parseur.
 
-Ce DOM est constitué de nœuds (*node*) reliés ensemble. Ces nœuds ont diverses propriétés, et ces propriétés peuvent changer "en cours de route".
+Ce DOM est constitué de nœuds (*node*) reliés ensemble. Ces nœuds ont diverses propriétés, que nous verrons plus loin dans cet article, et ces propriétés peuvent changer "en cours de route". 
 
 Ainsi un nœud qui pouvait avoir à un instant T telle ou telle propriété peut, suite à une opération donnée, en posséder de nouvelles, en être dépossédée d'autres etc. Autre chose, un nœud qui pouvait être relié à un autre peut également ne plus l'être suite à telle ou telle opération.
 
@@ -202,7 +202,7 @@ Nous allons voir les 5 variables utiles pour notre affaire : états, modes d'ins
 
  Mais pas seulement ! En sus de cela, les éléments eux-même ont des règles qui leur sont propres (cf. lien ci-dessus), ce qui rend le traitement des différents éléments particulièrement complexe. Parfois, on peut se demander si l'exception ne serait la norme dans ce standard :D .
 
-![comportement spéciaux html](special_html.png)
+![comportement spéciaux html](content/explorer_la_spec_html5_the_cool_way/special_html.png)
 
 
  Le premier élément de la pile des éléments ouverts sera **toujours** l'élément `html`, et ne sera dépilé qu'une fois le parsing terminé.
@@ -216,7 +216,7 @@ Cette liste permet de prendre en charge les éléments qui sont mal imbriqués e
 
 Les éléments de formatage sont dans cette liste : [a](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element), [b](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-b-element), [big](https://html.spec.whatwg.org/multipage/obsolete.html#big), [code](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-code-element), [em](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-em-element), [font](https://html.spec.whatwg.org/multipage/obsolete.html#font), [i](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-i-element), [nobr](https://html.spec.whatwg.org/multipage/obsolete.html#nobr), [s](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-s-element), [small](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-small-element), [strike](https://html.spec.whatwg.org/multipage/obsolete.html#strike), [strong](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-strong-element), [tt](https://html.spec.whatwg.org/multipage/obsolete.html#tt), et [u](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-u-element). 
 
-Il y a également ce que whawg nomme des "marqueurs" (*markers*), c'est à dire une liste d'éléments qui permettent de "bloquer" à un nœud l'opération de reconstruction ou de réagencement. Ou dit autrement, à leur manière, cela permet d'empêcher la "fuite" de certains éléments en dehors de ces marqueurs (par exemple la fuite en dehors d'un élément `template`), faisant de ces derniers la "racine" à partir de laquelle les opérations induites peuvent être menée.
+Il y a également ce que *whawg* nomme des "marqueurs" (*markers*), c'est à dire une liste d'éléments qui permettent de "bloquer" à un nœud l'opération de reconstruction ou de réagencement. Ou dit autrement, à leur manière, cela permet d'empêcher la "fuite" de certains éléments en dehors de ces marqueurs (par exemple la fuite en dehors d'un élément `template`), faisant de ces derniers la "racine" à partir de laquelle les opérations induites peuvent être menées.
 
 Règle supplémentaire, il ne peut y avoir plus trois éléments identiques de formatage après un marqueur donné. Par identique, il faut entendre : même nom d'élément, même attributs, même namespace.
 
@@ -251,7 +251,7 @@ L'agent utilisateur va donc reconstruire un arbre valide, qui deviendra *in fine
 
 Est-ce de la magie ?
 
-![marabout](marabout.png)
+![marabout](content/explorer_la_spec_html5_the_cool_way/marabout.png)
 
 Malheureusement, non.
 
@@ -275,7 +275,7 @@ Pour comprendre, nous devons prendre en compte 4 choses :
 > [!note]
 > Je vais être honnête : j'ai du mal à le comprendre. Afin de mieux le saisir, il faudrait que  j'implémente cette portion de la spécification au sein d'un programme, mais j'hésite entre :
 > 
-> ![flemme](flemme.png)
+> ![flemme](content/explorer_la_spec_html5_the_cool_way/flemme.png)
 > 
 > Nous nous contenterons donc du résultat de cet algo.
 
@@ -316,7 +316,11 @@ On constate qu'un nouvel élément `i` identique a été créé.
 
 ### Les nœuds
 
-Il me semble important d'aborder rapidement ce qu'est un nœud.
+Il me semble important d'aborder rapidement ce qu'est un nœud :
+
+![](content/explorer_la_spec_html5_the_cool_way/noeud1.png)
+
+La belle jambe...
 
 Le plus simple nœud qu'on puisse trouver dans HTML est du type [`Node`](https://dom.spec.whatwg.org/#node).
 
@@ -337,7 +341,7 @@ Il y a 12 `nodeType`, et parmi eux :
   - [DOCUMENT_FRAGMENT_NODE](https://dom.spec.whatwg.org/#dom-node-document_fragment_node) = 11;
   - `NOTATION_NODE` = 12; // legacy
 
-Le type de nœud qui va nous intéresser le plus est celui avec le `nodeType` 3 : [`Element`](https://dom.spec.whatwg.org/#element).
+Le type de nœud qui va nous intéresser le plus est celui avec le `nodeType` 1 : [`Element`](https://dom.spec.whatwg.org/#element).
 
 L'interface `Element` possède - entre autres - l'attribut suivant : [namespaceURI](https://dom.spec.whatwg.org/#dom-element-namespaceuri).
 
@@ -349,4 +353,4 @@ Ces règles d'intégration sont déterminées par le fameux mode d'insertion : [
 
 Ce sera l'objet du prochain article !
 
-![Mais non !](mais_non.png)
+![Mais non !](content/explorer_la_spec_html5_the_cool_way/mais_non.png)

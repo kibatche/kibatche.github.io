@@ -25,7 +25,7 @@ Or, les mutations surviennent parfois dans ces conditions exotiques. L'automatis
 
 Mais comment automatiser une telle classe de vulnérabilité ? S'il existe bien des [programmes](https://wpt.fyi/results/domparsing?label=master&label=experimental&aligned) pour tester la conformité d'un agent utilisateur à la spécification HTML, il n'y a rien de spécifique - toujours à ma connaissance - concernant les mutations ([hormis quelques tests](https://wpt.fyi/results/domparsing/innerhtml-mxss.sub.html?label=master&label=experimental&aligned)).
 
-Il s'agissait alors de trouver une façon de se faciliter la vie sans non plus développer quelque chose de 0. En cherchant sur les internets, un programme qui date de 2017 est ressorti : [domato](https://github.com/googleprojectzero/domato). Ce fuzzer HTML visait à faire casser les rendus des moteurs graphiques des navigateurs.
+Il s'agissait alors de trouver une façon de se faciliter la vie sans non plus développer quelque chose de 0. En cherchant sur les internets, un programme qui date de 2017 est ressorti : [domato](https://github.com/googleprojectzero/domato). Ce fuzzer HTML visait à casser les rendus des moteurs graphiques des navigateurs.
 
 On peut donc repartir de ce programme afin de l'adapter à l'usage qu'on souhaite en faire.
 

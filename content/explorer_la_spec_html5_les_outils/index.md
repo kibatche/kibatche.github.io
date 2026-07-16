@@ -659,7 +659,7 @@ Il est évident que je n'aurais jamais pu faire ce projet sans une IA. Le travai
 
 Pour ma part, l'IA aura été essentielle en deux points : écrire la documentation de mes trouvailles / essais / erreurs (une sorte de log géant qui mélange constats, hypothèses, compréhension que j'aie de telle ou telle chose), et le code.
 
-![](Pasted%20image%2020260628144233.png)
+![docs](content/explorer_la_spec_html5_les_outils/docs.png)
 
 J'ai programmé la plupart du fork de DOM-Explorer, tandis que claude a fait le gros du travail sur Domuto, grammaire exclue.
 
@@ -667,7 +667,7 @@ Côté apprentissage, je trouve que les IA sont mauvaises en pédagogie, mais le
 
 Ci-dessous, un exemple délirant d'une IA qui part en live à cause d'un ensemble de règle manifestement trop restrictif :
 
-![](Pasted%20image%2020260626122917.png)
+![hal9000 part en live](content/explorer_la_spec_html5_les_outils/hal9000_part_en_live.png)
 
 Je ne rentrerai pas dans les détails, le sujet mérite plus que quelques take balancées comme ça.
 

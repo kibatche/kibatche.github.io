@@ -35,22 +35,14 @@ Petite mise en garde: cet article concerne principalement de la programmation in
 
 > [!note]
 > Comme nous l'avons déjà écrit lors du premier article, PHP 8.4 a mis en place une nouvelle extension pour traiter le HTML : PHP DOM.
-> 
 > PHP DOM est une implémentation du parseur HTML *spec compliant* `lexbor`.
-> 
 > C'est donc bel et bien `lexbor` qui est la "cible". Cependant, pour diverses raisons, dans la version PHP, `lexbor`  n'est pas importé sans changements. Certains éléments, comme le `content` de `template`, sont opacifiés et non rendus dans l'arbre généré par PHP DOM, au contraire du mode `standalone` de `lexbor`.
-> 
 > Aussi, pour des raisons de compréhension, lexbor de php sera dénommé `lexbor php` et le standalone `lexbor standalone`.
-> 
 > L'ensemble de ce travail a été effectué sur PHP 8.4.18. Cette version embarque `lexbor 2.0.0` en sous main.
-> 
 > Pour tester des différences entre version, nous avons également utilisé `lexbor standalone` en version 2.7.0.
-> 
 > À l'heure où ces lignes sont écrites, lexbor est en version 3.0.0. PHP à quant à lui intégré (enfin !) la version 2.7.0, mais sur le coeur du module seulement, tandis que d'autres aspects sont dans des versions différentes. Ce qui concerne le DOM est en version 2.0.0, quand au module html (celui qui nous intéresse), il est maintenant lui en version 2.8.0 depuis le mois d'avril !
-> 
 > C'est un bordel sans nom, mais retenons une chose qui est cruciale pour la suite :
 > **Sera utilisée la version 8.4.18 de php, qui embarque lexbor 2.0.0.**
-> 
 > ![](content/explorer_la_spec_html5_les_outils/let's_go.png)
 
 ## DOM-Explorer
@@ -659,7 +651,7 @@ Il est évident que je n'aurais jamais pu faire ce projet sans une IA. Le travai
 
 Pour ma part, l'IA aura été essentielle en deux points : écrire la documentation de mes trouvailles / essais / erreurs (une sorte de log géant qui mélange constats, hypothèses, compréhension que j'aie de telle ou telle chose), et le code.
 
-![docs](content/explorer_la_spec_html5_les_outils/docs.png)
+![](Pasted%20image%2020260628144233.png)
 
 J'ai programmé la plupart du fork de DOM-Explorer, tandis que claude a fait le gros du travail sur Domuto, grammaire exclue.
 

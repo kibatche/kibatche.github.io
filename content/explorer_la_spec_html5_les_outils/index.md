@@ -5,19 +5,19 @@ template = "page.html"
 +++
 ## Introduction
 
-Lors des deux précédents articles, nous avons pu aborder une partie de la spécification HTML. Le but est de comprendre les mutation HTML qui peuvent conduire à des XSS, et de mettre à profit ces connaissances pour étudier la librairie HTML Sanitizer de Symfony.
+Lors des deux précédents articles, nous avons pu aborder une partie de la spécification HTML. Le but est de comprendre les mutations HTML qui peuvent conduire à des XSS, et de mettre à profit ces connaissances pour étudier la librairie HTML Sanitizer de Symfony.
 
 Mais notons une chose : Symfony est une librairie PHP, c'est à dire un langage de programmation `backend` qui, au contraire du javascript, n'est pas exécuté par un navigateur. 
 
 Son rôle, c'est de traiter la logique d'une application donnée, de générer du HTML, communiquer avec une base de données etc.
 
-Ce trait a une conséquence : on ne peut pas utiliser **DOMExplorer** tel qu'il nous est fourni, car cette application est sciemment limitée aux navigateurs.
+Ce trait a une conséquence : on ne peut pas utiliser **DOM-Explorer** tel qu'il nous est fourni, car cette application est sciemment limitée aux navigateurs.
 
-Dès lors, pour notre apprentissage, il était nécessaire de mettre en place une version backend de DOMExplorer : DOMExplorer Edition Code Spaghetti.
+Dès lors, pour notre apprentissage, il était nécessaire de mettre en place une version backend de DOM-Explorer : DOM-Explorer Edition Code Spaghetti.
 
 Cela a été le premier outil implémenté et c'est le premier que nous allons aborder.
 
-Mais, nous l'avons vu, si DOMExplorer possède certaines qualités nécessaires à l'étude des mutations HTML, il ne fait pour autant pas tout. Construire des payloads est un travail fastidieux.
+Mais, nous l'avons vu, si DOM-Explorer possède certaines qualités nécessaires à l'étude des mutations HTML, il ne fait pour autant pas tout. Construire des payloads est un travail fastidieux.
 
 Il est difficile, en effet, de penser à l'ensemble des problèmes qui pourraient survenir dans un parseur HTML, eût égard à la complexité de ces programmes, où des bugs peuvent être profondément insérés dans une base de code gigantesque.
 
@@ -33,7 +33,7 @@ Ce travail, long et fastidieux, a été mené avec une IA. Une rapide vue géné
 
 Petite mise en garde: cet article concerne principalement de la programmation informatique, et n'est pas nécessaire à la compréhension des mutations HTML. Son intérêt réside surtout dans le fait d'aborder les difficultés, idées, et de parler de programmation !
 
-> [!info]
+> [!note]
 > Comme nous l'avons déjà écrit lors du premier article, PHP 8.4 a mis en place une nouvelle extension pour traiter le HTML : PHP DOM.
 > 
 > PHP DOM est une implémentation du parseur HTML *spec compliant* `lexbor`.
@@ -53,12 +53,12 @@ Petite mise en garde: cet article concerne principalement de la programmation in
 > 
 > ![](content/explorer_la_spec_html5_les_outils/let's_go.png)
 
-## DOMExplorer
+## DOM-Explorer
 
-**DOMExplorer** est une application web vue/nuxt qui a été proposée par `Bitk` qui travaille chez YesWeHack. Elle permet, comme nous avons déjà pu le voir, de visualiser le DOM résultant d'une entrée HTML.
+**DOM-Explorer** est une application web vue/nuxt qui a été proposée par `Bitk` qui travaille chez YesWeHack. Elle permet, comme nous avons déjà pu le voir, de visualiser le DOM résultant d'une entrée HTML.
 
 Je dois avouer que je suis un grand admirateur de cette idée, et du travail qui a été fourni pour la mettre en oeuvre. Aussi je ne tarirai pas d'éloges à son propos ! :)
-### Le fonctionnement original de DOMExplorer
+### Le fonctionnement original de DOM-Explorer
 #### Les pipes
 
 L'application foncitonne avec ce que bitk nomme des `pipes` : ce sont des composants, nommés selon la bibliothèque de sanitisation mise en place ou le parseur utilisé.
@@ -192,7 +192,7 @@ L'idée est de rendre le `node` selon son type :
 </template>
 ```
 
-Cela est rendu possible par l'intermédiaire de diverses vérifications. Étant donné que DOMExplorer se base sur les vrais objets de type `Node`, ces vérifications sont triviales.
+Cela est rendu possible par l'intermédiaire de diverses vérifications. Étant donné que DOM-Explorer se base sur les vrais objets de type `Node`, ces vérifications sont triviales.
 
 Dans l'extrait de code ci-dessous, nous avons des rendus spécifiques. Si jamais le nœud est du type `Element`, alors c'est le fichier `app/components/DomExplorer/Render/RenderElement.vue` qui va rendre ce nœud. Ainsi, `RenderNode` est le poste d'aiguillage des données, envoyées ici ou;là selon leur type.
 
@@ -230,15 +230,15 @@ Cette imbrication est élégamment traitée via une boucle :
 </template>
 ```
 
-Et voilà, rapidement, le fonctionnement de DOMExplorer édition originale.
+Et voilà, rapidement, le fonctionnement de DOM-Explorer édition originale.
 
-## Le fonctionnement de DOMExplorer, Edition Code Spaghetti™
+## Le fonctionnement de DOM-Explorer, Edition Code Spaghetti™
 
-Maintenant que nous avons vu rapidement comment était construit le DOMExplorer original, voyons un peu comment nous pouvons faire en sorte de l'adapter pour un langage backend arbitraire. Pour nous ce sera du PHP, mais ça pourrait être n'importe quoi d'autre aux prix de quelques changements.
+Maintenant que nous avons vu rapidement comment était construit le DOM-Explorer original, voyons un peu comment nous pouvons faire en sorte de l'adapter pour un langage backend arbitraire. Pour nous ce sera du PHP, mais ça pourrait être n'importe quoi d'autre aux prix de quelques changements.
 
 En premier lieu, il me semble utiliser d'aborder les contraintes d'une telle démarche.
 
-### Les contraintes de faire fonctionner DOMExplorer pour un langage backend
+### Les contraintes de faire fonctionner DOM-Explorer pour un langage backend
 
 Avoir un langage backend suppose la plupart du temps de mettre en place une infrastructure dédiée à la communication entre le front et ledit backend.
 
@@ -251,7 +251,7 @@ L'une des solutions est une architecture client/serveur :
 3. PHP DOM traite ces données selon les mêmes conditions qu'un parseur navigateur générique
 4. On interface le résultat afin de le sérialiser de nouveau
 5. Le résultat est récupéré dans une promesse JS
-6. On désérialise ces données côté DOMExplorer, via une interface miroir.
+6. On désérialise ces données côté DOM-Explorer, via une interface miroir.
 
 > Pourquoi tout ça ?
 
@@ -322,7 +322,7 @@ Cependant, cela n'a pas été utilisé dans ce travail.
 
 Etant donné que nous construisons de toutes pièces un arbre, il nous faut donc des interfaces qui miment cet arbre, ainsi que les données qui s'y trouvent.
 
-Pour nous, un noeud (et les variantes) sera donc réduit au minimum voulu : seules sont conservées les données effectivement exploitées par DOMExplorer, à l'exception de certaines qui ont été laissées "au cas où".
+Pour nous, un noeud (et les variantes) sera donc réduit au minimum voulu : seules sont conservées les données effectivement exploitées par DOM-Explorer, à l'exception de certaines qui ont été laissées "au cas où".
 
 Lexbor a donc un fichier en plus `Lexbor.type.js`:
 
@@ -464,7 +464,7 @@ Enfin, voici les autres principaux fichiers présents :
 
 Eh oui, on ne l'a pas oublié celui là !
 
-Rien à dire de spécial cependant, c'est juste un Wrapper. Côté DOMExplorer, c'est très simple : il s'agit juste d'une string qui est retournée !
+Rien à dire de spécial cependant, c'est juste un Wrapper. Côté DOM-Explorer, c'est très simple : il s'agit juste d'une string qui est retournée !
 
 Côté php, c'est vraiment simple :
 
@@ -479,11 +479,11 @@ Côté php, c'est vraiment simple :
     echo json_encode(["html" => $sanitizedHtml]);
 ```
 
-Et voilà à quoi ressemble, *grosso modo* **DOMExplorer Édition Code Spaghetti™** :) .
+Et voilà à quoi ressemble, *grosso modo* **DOM-Explorer Édition Code Spaghetti™** :) .
 
 #### Liens
 
-Vous pouvez retrouver DOMExplorer avec les fichiers backend, le binaire php 8.4.18, le binaire lexbor 2.7.0 ici [METTRE lien], bugs inclus ! Ne me remerciez pas, c'est naturel chez moi.
+Vous pouvez retrouver DOM-Explorer avec les fichiers backend, le binaire php 8.4.18, le binaire lexbor 2.7.0 ici [METTRE lien], bugs inclus ! Ne me remerciez pas, c'est naturel chez moi.
 
 ## Domuto, un fork de Domato
 
@@ -503,7 +503,7 @@ Car il est toujours intéressant de voir ce qu'un chaos maîtrisé peut donner. 
 
 Donc l'idée a été de créer de toutes pièces une grammaire de mutation, et de l'utiliser pour générer du HTML à partir d'elle. Ces portions générées sont ensuite envoyées au serveur PHP, et comparé à un oracle via Playwright : pour ma part c'est firefox, mais ça pourrait aussi être chrome.
 
-A chaque divergence, selon les options, un fichier HTML du payload est créé, et le tout est logué. On peut ensuite rejouer chacun de fichier sur DOMExplorer, ou passer l'ensemble à une IA pour voir exactement quel(s) mécanisme(s) ont pu créer une divergence donnée.
+A chaque divergence, selon les options, un fichier HTML du payload est créé, et le tout est logué. On peut ensuite rejouer chacun de fichier sur DOM-Explorer, ou passer l'ensemble à une IA pour voir exactement quel(s) mécanisme(s) ont pu créer une divergence donnée.
 
 Ci-dessous, une diagramme représentatif du fonctionnement de Domuto (généré par une IA) :
 
@@ -661,7 +661,7 @@ Pour ma part, l'IA aura été essentielle en deux points : écrire la documentat
 
 ![](Pasted%20image%2020260628144233.png)
 
-J'ai programmé la plupart du fork de DOMExplorer, tandis que claude a fait le gros du travail sur Domuto, grammaire exclue.
+J'ai programmé la plupart du fork de DOM-Explorer, tandis que claude a fait le gros du travail sur Domuto, grammaire exclue.
 
 Côté apprentissage, je trouve que les IA sont mauvaises en pédagogie, mais les connaissances qu'elles contiennent est franchement une source de joie pour moi : je peux poser n'importe quoi comme question, je peux avoir une réponse correcte (ou un "je ne sais pas") au prix d'un **gros** travail en amont pour que l'IA source systématiquement.
 
@@ -678,6 +678,6 @@ Cela fera peut-être l'objet d'un article à part entière si j'en ai le courage
 En attendant, je clos le sujet !
 ## Conclusion
 
-Nous avons pu voir rapidement dans cet article les outils qui ont été créés afin de continuer notre quête sur les mutations. Que ce soit le version Code Spaghetti de DOMExplorer, ou Domuto, nous avons maintenant toutes les cartes en main pour nous attaquer au 4ème et dernier article : quelques mutations trouvées dans lexbor. Et aussi, avec une question : Symfony HTML Sanitizer est-il vulnérable aux mutations ?
+Nous avons pu voir rapidement dans cet article les outils qui ont été créés afin de continuer notre quête sur les mutations. Que ce soit le version Code Spaghetti de DOM-Explorer, ou Domuto, nous avons maintenant toutes les cartes en main pour nous attaquer au 4ème et dernier article : quelques mutations trouvées dans lexbor. Et aussi, avec une question : Symfony HTML Sanitizer est-il vulnérable aux mutations ?
 
 Rendez-vous bientôt !

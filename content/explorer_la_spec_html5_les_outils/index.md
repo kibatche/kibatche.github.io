@@ -43,7 +43,7 @@ Petite mise en garde: cet article concerne principalement de la programmation in
 > À l'heure où ces lignes sont écrites, lexbor est en version 3.0.0. PHP à quant à lui intégré (enfin !) la version 2.7.0, mais sur le coeur du module seulement, tandis que d'autres aspects sont dans des versions différentes. Ce qui concerne le DOM est en version 2.0.0, quand au module html (celui qui nous intéresse), il est maintenant lui en version 2.8.0 depuis le mois d'avril !
 > C'est un bordel sans nom, mais retenons une chose qui est cruciale pour la suite :
 > **Sera utilisée la version 8.4.18 de php, qui embarque lexbor 2.0.0.**
-> ![](content/explorer_la_spec_html5_les_outils/let's_go.png)
+> ![](let's_go.png)
 
 ## DOM-Explorer
 
@@ -651,7 +651,7 @@ Il est évident que je n'aurais jamais pu faire ce projet sans une IA. Le travai
 
 Pour ma part, l'IA aura été essentielle en deux points : écrire la documentation de mes trouvailles / essais / erreurs (une sorte de log géant qui mélange constats, hypothèses, compréhension que j'aie de telle ou telle chose), et le code.
 
-![docs](content/docs.png)
+![docs](docs.png)
 
 J'ai programmé la plupart du fork de DOM-Explorer, tandis que claude a fait le gros du travail sur Domuto, grammaire exclue.
 
@@ -659,7 +659,7 @@ Côté apprentissage, je trouve que les IA sont mauvaises en pédagogie, mais le
 
 Ci-dessous, un exemple délirant d'une IA qui part en live à cause d'un ensemble de règle manifestement trop restrictif :
 
-![hal9000 part en live](content/hal9000_part_en_live.png)
+![hal9000 part en live](hal9000_part_en_live.png)
 
 Je ne rentrerai pas dans les détails, le sujet mérite plus que quelques take balancées comme ça.
 

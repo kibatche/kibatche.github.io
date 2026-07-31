@@ -15,10 +15,10 @@ Les briques de l'arbre sont les *nodes*  - nœuds -, des abstractions programmat
 
 Dans la spécification HTML il existe de nombreux moyens de muter un arbre. Mais l'un des plus connus est sans aucun doute le jeu avec les *namespaces* - espaces de nom -, une des variables présentes dans un nœud sous la dénomination de *namespaceURI*.
 
-Dans cet article, nous allons donc étudier un peu ces *namespaces* et détailler l'étape de parsing qui traite des *namespaces* : le mode `in foreign content`. Par la suite, nous allons détailler quelques autres opérations présentes au sein de la spécification qui conduisent également à des mutations, avant d'attaquer - enfin ! - .
+Dans cet article, nous allons donc étudier un peu ces *namespaces* et détailler l'étape de parsing qui traite des *namespaces* : le mode `in foreign content`. Par la suite, nous allons détailler quelques autres opérations présentes au sein de la spécification qui conduisent également à des mutations, avant d'attaquer - enfin ! - l'analyse du parseur lexbor.
 
 
-![letsgo](content/explorer_la_spec_html5_foreign_content/let's_go.png)
+![letsgo](let's_go.png)
 
 ## Les *namespaces* et les points d'intégration
 
@@ -112,7 +112,7 @@ Le souci principal était que le chrome d'alors ne prenait pas en compte `</p>` 
 
 En résultait une normalisation[^1], transformant `</p>` en `<p></p>` qui lui -  au second parsing - brisait bien bien le nœud.
 
-![perfermanman](content/explorer_la_spec_html5_foreign_content/perfermaman.png)
+![perfermanman](perfermaman.png)
 
 Dans tout ce processus, intervient la balise `style` qui a une signification différente dans un contexte HTML : elle fait passer la machine à état en `RAWTEXT`, [comme cela est détaillé dans cette portion de la spécification](https://html.spec.whatwg.org/multipage/parsing.html#parsing-html-fragments:rawtext-state).
 

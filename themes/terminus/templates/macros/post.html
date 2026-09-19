@@ -43,7 +43,7 @@
         <li role="separator" aria-hidden="true">::</li>
 
         {%- set word_count = [page.word_count ~ " word", page.word_count | pluralize] | join %}
-        <li title="{{ word_count }}"><time datetime="PT{{ page.reading_time }}M">{% if page.reading_time == 0 %}&lt;1 min{% else %}{{ page.reading_time }} min{% endif %}</time> read</li>
+        <li title="{{ word_count }}"><time datetime="PT{{ page.reading_time }}M">{% if page.reading_time == 0 %}&lt;1 min{% else %}{{ page.reading_time }} min{% endif %}</time> de lecture</li>
     </ul>
 
     {%- if page.taxonomies %}

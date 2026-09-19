@@ -7,15 +7,15 @@ template = "page.html"
 
 Dans le premier article de cette série, nous avons vu les bases de la spécification HTML en abordant certaines variables essentielles à la construction d'un arbre et sa réparation, ainsi que la méthode de reconstruction de l'arbre.
 
-Le but est d'aborder la spécification par sa subversion. Or, en terme de subversion, le plus classique concernant la construction d'un arbre est la mutation, qui donne notamment lieu à une vulnérabilité nommée *mutation XSS*.
+Le but est d'aborder la spécification par sa subversion. Or, en termes de subversion, le plus classique concernant la construction d'un arbre est la mutation, qui donne notamment lieu à une vulnérabilité nommée *mutation XSS*.
 
 Comme nous l'avons précédemment évoqué, le DOM est **dynamique** : chaque token émis est immédiatement consommé par l'étape de construction, et cette opération peut changer la structure même de ce qui est en train d'être construit, par le biais de plusieurs opérations, par exemple l'*AFE* que nous avons étudié (`Formatage des Éléments Actifs`).
 
-Les briques de l'arbre sont les *nodes*  - nœuds -, des abstractions programmatiques qui embarquent au sein de leur structure de nombreuses variables permettant de les traiter d'une certaine façon à un instant T.
+Les briques de l'arbre sont les *nodes* – nœuds – des abstractions programmatiques qui embarquent au sein de leur structure de nombreuses variables permettant de les traiter d'une certaine façon à un instant T.
 
-Dans la spécification HTML il existe de nombreux moyens de muter un arbre. Mais l'un des plus connus est sans aucun doute le jeu avec les *namespaces* - espaces de nom -, une des variables présentes dans un nœud sous la dénomination de *namespaceURI*.
+Dans la spécification HTML, il existe de nombreux moyens de muter un arbre. Mais l'un des plus connus est sans aucun doute le jeu avec les *namespaces* – espaces de nom – une des variables présentes dans un nœud sous la dénomination de *namespaceURI*.
 
-Dans cet article, nous allons donc étudier un peu ces *namespaces* et détailler l'étape de parsing qui traite des *namespaces* : le mode `in foreign content`. Par la suite, nous allons détailler quelques autres opérations présentes au sein de la spécification qui conduisent également à des mutations, avant d'attaquer - enfin ! - l'analyse du parseur lexbor.
+Dans cet article, nous allons donc étudier un peu ces *namespaces* et détailler l'étape de parsing qui traite des *namespaces* : le mode `in foreign content`. Par la suite, nous allons détailler quelques autres opérations présentes au sein de la spécification qui conduisent également à des mutations, avant d'attaquer – enfin ! – l'analyse du parseur lexbor.
 
 
 ![letsgo](let's_go.png)
@@ -43,7 +43,7 @@ Dans la spécification HTML, le mécanisme qui permet ce changement de contexte 
 
 Ils sont au nombre de 5. Ils sont utiles pour intégrer du HTML au sein de balises faisant parties du *namespace* `mathml` :
 
-- `<mi>`   *identifier*
+- `<mi>`  *identifier*
 - `<mo>`   *operator*
 - `<mn>`   *number*
 - `<ms>`   *string literal*
@@ -56,11 +56,11 @@ Ci-dessous un exemple montrant une balise `a` intégrée en tant qu'élément HT
 2. [*HTML integration point*](https://html.spec.whatwg.org/multipage/parsing.html#html-integration-point)
 
 Ils sont également au nombre de 5, mais s'applique, selon l'élément, à un *namespace* spécifique :
-- `<annotation-xml encoding="text/html">` -> `mathml`
-- `<annotation-xml encoding="application/xhtml+xml">` -> `mathml`
-- `<foreignObject>` -> `svg`
-- `<desc>` -> `svg`
-- `<title>` -> `svg`
+- `<annotation-xml encoding="text/html">` → `mathml`
+- `<annotation-xml encoding="application/xhtml+xml">` → `mathml`
+- `<foreignObject>` → `svg`
+- `<desc>` → `svg`
+- `<title>` → `svg`
 
 Voici par exemple l'élément `desc` contenant une balise `a` dans le contexte `svg`, puis `mathml`. On remarque que dans le contexte `mathml`, l'élément `a` possède le *namespace* `mathml` et non pas `xhtml` :
 
@@ -102,11 +102,11 @@ Par exemple, de façon surprenante de prime abord, avec un élément fermant `p`
 
 {{domexplorer(id="eyJpbnB1dCI6Ijxzdmc+XG48YT5EYW5zIGxlIG5vZXVkIFNWRzwvYT5cbjwvcD5cbjxhPkRlaG9ycyAhPC9hPlxuPC9zdmc+IiwicGlwZWxpbmVzIjpbeyJpZCI6InJ0N3ZqdjExIiwibmFtZSI6IkRvbSBUcmVlIiwicGlwZXMiOlt7Im5hbWUiOiJEb21QYXJzZXIiLCJpZCI6Imo1d2J6dGY4IiwiaGlkZSI6ZmFsc2UsInNraXAiOmZhbHNlLCJvcHRzIjp7InR5cGUiOiJ0ZXh0L2h0bWwiLCJzZWxlY3RvciI6ImJvZHkiLCJvdXRwdXQiOiJpbm5lckhUTUwiLCJhZGREb2N0eXBlIjp0cnVlfX1dfV19")}}
 
-Cette règle est essentielle quelque part : si un parseur ne suivait pas cette règle, cela signifierait qu'un élément non autorisé resterait dans le *namespace* `svg`.
+Cette règle est essentielle quelque part : si un parseur ne suivait pas cette règle, cela signifierait qu'un élément non autorisé resterait dans le *namespace* `SVG`.
 
 Par exemple, avec DomPurify 2.0.0, ainsi que c'est expliqué dans [cet article](https://sechub.in/view/1851825), il était possible d'exploiter le *payload* suivant avec une ancienne version de chrome (l'exemple est reconstruit) :
 
-![](content/explorer_la_spec_html5_foreign_content/chrom_mxss_exploit.png)
+![](chrom_mxss_exploit.png)
 
 Le souci principal était que le chrome d'alors ne prenait pas en compte `</p>` comme briseur de contenu.
 
@@ -122,7 +122,7 @@ Ci-dessous, on voit bien le comportement :
 
 La balise `a` est vue comme un élément en contexte `svg` dans une balise `style` et comme du texte, en contexte `HTML` dans une balise `style`.
 
-Penchons nous rapidement sur cet état `RAWTEXT`.
+Penchons-nous rapidement sur cet état `RAWTEXT`.
 ## L'état `RAWTEXT`
 
 Cet état est particulièrement apprécié. La spécification impose que, dès qu'un élément déclenche un tel état, les tokens soient consommés jusqu'à trouver une balise fermante qui corresponde à la balise ouvrante, dans l'exemple ci-dessus, `<style>`.

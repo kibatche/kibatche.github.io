@@ -1,0 +1,13 @@
+{
+  "serverUrl": "http://localhost:8010",
+  "urlMode": "custom",
+  "showRibbonIcon": true,
+  "glassBg": false,
+  "shouldAutoCheck": true,
+  "autoCheckDelay": 3000,
+  "pickyMode": true,
+  "apiKeyStorage": "secret",
+  "motherTongue": "fr",
+  "staticLanguage": "auto",
+  "englishVeriety": "en-US"
+}

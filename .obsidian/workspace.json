@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/explorer_la_spec_html5_the_cool_way/index.md",
+                "file": "content/explorer_la_spec_html5_les_outils/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -192,14 +192,15 @@
       "daily-notes:Ouvrir la note quotidienne": false,
       "templates:Insérer le modèle": false,
       "command-palette:Ouvrir la palette de commandes": false,
-      "bases:Créer une nouvelle base": false
+      "bases:Créer une nouvelle base": false,
+      "obsidian-languagetool-plugin:Check text with LanguageTool": false
     }
   },
   "active": "64da46f649a3c7b7",
   "lastOpenFiles": [
-    "content/explorer_la_spec_html5_foreign_content/index.md",
-    "content/explorer_la_spec_html5_les_outils/index.md",
     "content/explorer_la_spec_html5_the_cool_way/index.md",
+    "content/explorer_la_spec_html5_les_outils/index.md",
+    "content/explorer_la_spec_html5_foreign_content/index.md",
     "public/explorer-la-spec-html5-the-cool-way/let's_go.png",
     "content/explorer_la_spec_html5_the_cool_way/let's_go.png",
     "public/explorer-la-spec-html5-the-cool-way/mais_non.png",

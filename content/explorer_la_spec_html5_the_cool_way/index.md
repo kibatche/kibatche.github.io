@@ -76,7 +76,7 @@ En effet, le `HTML5` se voulait l'héritier de plusieurs technologies : `HTML4`,
 
 Mais en 2011, plutôt que `HTML5` – vu comme un terme essentiellement marketing dénué de sens vis-à-vis de ce qu'était ce standard – le comité `whatwg` parle tout simplement de `HTML` et du [*Living Standard*](https://blog.whatwg.org/html-is-the-new-html5). Exit donc les numéros de version : le standard est maintenant en constante évolution.
 
-Si le sujet vous intéresse, je vous renvoie à cette [introduction](https://html.spec.whatwg.org/#history-2) du consortium *whatwg*, et à [ce chapitre](https://mislav.github.io/diveintohtml5/past.html), *How Did We Get Here?*, du livre *Dive Into HTML5* de Mark Pilgrim qui expose avec pédagogie et humour comment se construit un standard, ainsi qu'une histoire (*biaisée* comme le dit Pilgrim) de `HTML5`.
+Si le sujet vous intéresse, je vous renvoie à cette [introduction](https://html.spec.whatwg.org/#history-2) du comité *whatwg*, et à [ce chapitre](https://mislav.github.io/diveintohtml5/past.html), *How Did We Get Here?*, du livre *Dive Into HTML5* de Mark Pilgrim qui expose avec pédagogie et humour comment se construit un standard, ainsi qu'une histoire (*biaisée* comme le dit Pilgrim) de `HTML5`.
 
 Il s'agit d'une spécification qu'on peut arbitrairement séparer en trois grandes parties :
 

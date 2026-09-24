@@ -72,22 +72,26 @@ Si lire la spécification dans son entier n'est pas forcément une bonne idée, 
 
 Une réponse rapide serait : la suite de `HTML4`. Mais une réponse qui se rapprocherait plus de la vérité serait : une tentative de mettre un peu d'ordre dans le bazar incroyable que pouvaient être les technologies utilisées sur le web au début des années 2000.
 
-Plutôt que `HTML5`, le comité `whatwg` parle tout simplement de `HTML`. L'absence de version dénote la volonté d'unifier les règles qui régissent le langage, héritier de plusieurs technologies : le `HTML4`, le `XHTML1` - qui se base sur la syntaxe `XML` - ainsi que `DOM2` (*DOM* pour **D**ocument **O**bject **M**odel).
+En effet, le `HTML5` se voulait l'héritier de plusieurs technologies : `HTML4`, le `XHTML1` - qui se base sur la syntaxe `XML` - ainsi que `DOM2 HTML` (*DOM* pour **D**ocument **O**bject **M**odel).
+
+Mais en 2011, plutôt que `HTML5` – vu comme un terme essentiellement marketing dénué de sens vis-à-vis de ce qu'était ce standard – le comité `whatwg` parle tout simplement de `HTML` et du [*Living Standard*](https://blog.whatwg.org/html-is-the-new-html5). Exit donc les numéros de version : le standard est maintenant en constante évolution.
+
+Si le sujet vous intéresse, je vous renvoie à cette [introduction](https://html.spec.whatwg.org/#history-2) du consortium *whatwg*, et à [ce chapitre](https://mislav.github.io/diveintohtml5/past.html), *How Did We Get Here?*, du livre *Dive Into HTML5* de Mark Pilgrim qui expose avec pédagogie et humour comment se construit un standard, ainsi qu'une histoire (*biaisée* comme le dit Pilgrim) de `HTML5`.
 
 Il s'agit d'une spécification qu'on peut arbitrairement séparer en trois grandes parties :
 
 1. **Une Partie qui concerne les différentes définitions d'éléments et concepts de HTML :**
-	- [L'infrastructure commune](https://html.spec.whatwg.org/multipage/infrastructure.html#infrastructure): cette section détermine la base commune à toute la spécification (les unités informatiques utilisées, la nomenclature, etc.)
+	- [L'infrastructure commune](https://html.spec.whatwg.org/multipage/infrastructure.html#infrastructure) : cette section détermine la base commune à toute la spécification (les unités informatiques utilisées, la nomenclature, etc.)
 	- [La sémantique, la structure ainsi que les différentes API d'un Document HTML]([Semantics, structure, and APIs of HTML documents](https://html.spec.whatwg.org/multipage/dom.html#dom) : cette section détermine par exemple l'objet `Document`, ainsi que tout ce qui concerne l'implémentation des différents éléments du HTML par le biais notamment d'**interfaces**, ainsi que les attributs globaux des éléments HTML, ou encore différentes propriétés.
 	- [Les éléments du HTML](https://html.spec.whatwg.org/multipage/semantics.html#semantics) : c'est ce que tout le monde connaît, la définition de l'ensemble des éléments disponibles en HTML, comme la balise `a` ou encore `script`, le tout regroupé par typologie. On a ainsi des éléments typés comme des éléments de métadonnées (`meta` par exemple), des `section`, etc.
-	- [Les microdonnées]([Microdata](https://html.spec.whatwg.org/multipage/microdata.html#microdata): Définition d'un certain type de métadonnées utilisé au sein des documents.
+	- [Les microdonnées]([Microdata](https://html.spec.whatwg.org/multipage/microdata.html#microdata) : Définition d'un certain type de métadonnées utilisé au sein des documents.
 
 2. **Une partie qui concerne principalement l'implémentation programmatique de fonctionnalités HTML :**
 	- [Les interactions utilisateurs](https://html.spec.whatwg.org/multipage/interaction.html#editing) : Détermine certains attributs qui peuvent ou non déclencher des événements après interactions, permettent de rendre visibles ou non certains éléments auprès des utilisateurs etc. et les différentes interfaces de programmation afférentes.
 	- [Le chargement des pages web](https://html.spec.whatwg.org/multipage/browsers.html#browsers) : Détermine l'objet `Window`, ainsi que les interfaces`Location` ou encore `History` parmi d'autres. C'est une section qui aborde également la notion d'origine en HTML - *origin* - qui est centrale dans la sécurité informatique liée aux applications web.
 	- [API des applications Web](https://html.spec.whatwg.org/multipage/webappapis.html#webappapis) : Détermine de nombreuses choses comme la façon dont les scripts sont exécutés dans le contexte d'un document, l'insertion dynamique de balise, et surtout **l'interface de *parsing* du DOM ainsi que sa sérialisation via l'API `DOMParser`**.
-	- [La communication](https://html.spec.whatwg.org/multipage/comms.html#comms): Détermine l'interface `MessageEvent` utilisée dans différentes façons de communiquer (au sein d'un document, entre documents, etc.)
-	- [Les Web workers](https://html.spec.whatwg.org/multipage/workers.html#workers): Détermine les différentes interfaces liées aux workers web, qui permettent d'exécuter du `JavaScript` en tâche de fond.
+	- [La communication](https://html.spec.whatwg.org/multipage/comms.html#comms) : Détermine l'interface `MessageEvent` utilisée dans différentes façons de communiquer (au sein d'un document, entre documents, etc.)
+	- [Les Web workers](https://html.spec.whatwg.org/multipage/workers.html#workers) : Détermine les différentes interfaces liées aux workers web, qui permettent d'exécuter du `JavaScript` en tâche de fond.
 	- [Le Web storage](https://html.spec.whatwg.org/multipage/webstorage.html#webstorage) : Détermine les différentes interfaces liées au Web storage qui sert à stocker des données de type clé/valeur au sein du navigateur.
 
 3. **Une partie qui concerne le parsing (donc l'analyse et le traitement syntaxique) de HTML ainsi que le rendu de HTML :**
@@ -193,7 +197,7 @@ Nous allons voir les cinq variables utiles pour notre affaire : états, modes d'
 
  Les modes d'insertion servent à contrôler la construction de l'arbre. 
 
- Il y a aussi de très nombreux modes. Le mode d'insertion initial est tout simplement *initial*. On trouve par ailleurs le mode d'insertion [*in body*](https://html.spec.whatwg.org/multipage/parsing.html#parsing-main-inbody), [*in table*](https://html.spec.whatwg.org/multipage/parsing.html#parsing-main-intable) et l'un des plus intéressants concernant notre cas, le mode d'insertion [*in foreign content*](https://html.spec.whatwg.org/multipage/parsing.html#parsing-main-inforeign). Nous reviendrons sur ce dernier mode d'insertion en détail ici [INSERER SECTION CORRESPONDANTE].
+ Il y a aussi de très nombreux modes. Le mode d'insertion initial est tout simplement *initial*. On trouve par ailleurs le mode d'insertion [*in body*](https://html.spec.whatwg.org/multipage/parsing.html#parsing-main-inbody), [*in table*](https://html.spec.whatwg.org/multipage/parsing.html#parsing-main-intable) et l'un des plus intéressants concernant notre cas, le mode d'insertion [*in foreign content*](https://html.spec.whatwg.org/multipage/parsing.html#parsing-main-inforeign). Nous revenons sur ce dernier mode d'insertion en détail [ici](https://kibatche.github.io/explorer-la-spec-html5-foreign-content/).
 
 -  [**La pile des éléments ouverts :**](https://html.spec.whatwg.org/multipage/parsing.html#the-stack-of-open-elements)
 
@@ -273,9 +277,7 @@ Pour comprendre, nous devons prendre en compte 4 choses :
 
 > [!note]
 > Je vais être honnête : j'ai du mal à le comprendre. Afin de mieux le saisir, il faudrait que  j'implémente cette portion de la spécification au sein d'un programme, mais j'hésite entre :
-> 
 > ![flemme](flemme.png)
-> 
 > Nous nous contenterons donc du résultat de cet algo.
 
 **Flux de tokens & DOM résultant**
